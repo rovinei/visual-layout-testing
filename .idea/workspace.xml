@@ -2,90 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cb4cb9b-a293-48f9-8862-00623bbaae15" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/prepros-6.config" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/HELP-US-OUT.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/fonts/FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/less/animated.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/less/bordered-pulled.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/less/fixed-width.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/less/font-awesome.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/less/icons.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/less/larger.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/less/mixins.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/less/rotated-flipped.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/less/screen-reader.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/less/stacked.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/less/variables.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/scss/_animated.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/scss/_bordered-pulled.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/scss/_core.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/scss/_fixed-width.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/scss/_icons.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/scss/_larger.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/scss/_list.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/scss/_mixins.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/scss/_path.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/scss/_rotated-flipped.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/scss/_screen-reader.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/scss/_stacked.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/scss/_variables.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/scss/font-awesome.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/selectizejs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/templates/clarifai/add_images.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/templates/clarifai/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/templates/clarifai/layout/base.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/urls.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/clarifaiApi/views.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puBrowser/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puBrowser/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puBrowser/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puBrowser/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puBrowser/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puBrowser/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puBrowser/urls.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/puBrowser/views.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/screenshot/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/screenshot/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/screenshot/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/screenshot/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/screenshot/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/screenshot/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/screenshot/urls.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/screenshot/views.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/__init__.py" afterPath="$PROJECT_DIR$/src/apps/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/custom/css/style.css" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/custom/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/custom/js/main.js" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/custom/js/main.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/font-awesome/css/font-awesome.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/font-awesome/css/font-awesome.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/less/core.less" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/font-awesome/less/core.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/less/list.less" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/font-awesome/less/list.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/font-awesome/less/path.less" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/font-awesome/less/path.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/jquery/jquery-3.2.1.min.js" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/jquery/jquery-3.2.1.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/src/sass/_timeline.scss" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/src/sass/_timeline.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/src/sass/style.scss" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/src/sass/style.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/swal/sweetalert-2.0.6.min.js" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/swal/sweetalert-2.0.6.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/swal/sweetalert.min.css" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/swal/sweetalert.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/uikit/css/uikit-rtl.css" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/uikit/css/uikit-rtl.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/uikit/css/uikit-rtl.min.css" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/uikit/css/uikit-rtl.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/uikit/css/uikit.css" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/uikit/css/uikit.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/uikit/css/uikit.min.css" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/uikit/css/uikit.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/uikit/js/uikit-icons.js" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/uikit/js/uikit-icons.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/uikit/js/uikit-icons.min.js" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/uikit/js/uikit-icons.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/uikit/js/uikit.js" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/uikit/js/uikit.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/clarifaiApi/static/clarifai/uikit/js/uikit.min.js" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/uikit/js/uikit.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/webAutomateTesting/settings.py" afterPath="$PROJECT_DIR$/src/webAutomateTesting/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/webAutomateTesting/urls.py" afterPath="$PROJECT_DIR$/src/webAutomateTesting/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/selectizejs" afterPath="$PROJECT_DIR$/src/apps/clarifaiApi/static/clarifai/selectizejs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -140,11 +57,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/apps/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -249,8 +176,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="550" />
-    <option name="y" value="107" />
+    <option name="x" value="246" />
+    <option name="y" value="109" />
     <option name="width" value="1677" />
     <option name="height" value="907" />
   </component>
@@ -302,6 +229,46 @@
               <item name="webAutomateTesting" type="b2602c69:ProjectViewProjectNode" />
               <item name="webAutomateTesting" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webAutomateTesting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webAutomateTesting" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webAutomateTesting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webAutomateTesting" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="clarifaiApi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webAutomateTesting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webAutomateTesting" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="clarifaiApi" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webAutomateTesting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webAutomateTesting" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="clarifaiApi" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="clarifai" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webAutomateTesting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webAutomateTesting" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="clarifaiApi" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="clarifai" type="462c0819:PsiDirectoryNode" />
+              <item name="selectizejs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -369,10 +336,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="550" y="107" width="1677" height="907" extended-state="0" />
-    <editor active="true" />
+    <frame x="246" y="109" width="1677" height="907" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14984709" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14984709" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2364532" sideWeight="0.50208336" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -618,14 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/webAutomateTesting/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -696,6 +654,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
           <folding />
         </state>
       </provider>
