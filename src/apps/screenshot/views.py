@@ -59,6 +59,9 @@ MOBILE_EMULATION_LIST = [
 
 class Screenshot(object):
 
+    def __init__(self):
+        pass
+
     def index(self, request):
         contexts = dict()
         contexts.update({
@@ -74,3 +77,4 @@ class Screenshot(object):
             print ""
 
         return JsonResponse(contexts)
+
