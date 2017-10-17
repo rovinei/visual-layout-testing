@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'clarifaiApi',
-    'puBrowser'
+    'apps.clarifaiApi',
+    'apps.puBrowser'
 ]
 
 MIDDLEWARE = [

@@ -18,6 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^', admin.site.urls),
-    url(r'^clarifai/', include('clarifaiApi.urls', namespace='clarifai-api')),
-    url(r'^screenshot', include('puBrowser.urls'), name="pu-browser")
+    url(r'^clarifai/', include('apps.clarifaiApi.urls', namespace='clarifai-api')),
+    url(r'^screenshot', include('apps.puBrowser.urls'), name="pu-browser")
 ]
