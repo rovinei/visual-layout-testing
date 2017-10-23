@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block page_title %}{% endblock page_title %}</title>
+    <meta name="csrfmiddlewaretoken" content="{{ csrf_token }}">
+    <link href="{% static 'clarifai/selectize/css/selectize.css' %}" rel="stylesheet">
+    <link href="{% static 'clarifai/selectize/css/selectize.default.css' %}" rel="stylesheet">
+    <link href="{% static 'clarifai/selectize/css/selectize.bootstrap3.css' %}" rel="stylesheet">
+    <link href="{% static 'clarifai/uikit/css/uikit.min.css' %}" rel="stylesheet">
+    <!--<link href="{% static 'clarifai/uikit/css/uikit-rtl.min.css' %}" rel="stylesheet">-->
+    <link href="{% static 'clarifai/swal/sweetalert.min.css' %}" rel="stylesheet">
+    <link href="{% static 'clarifai/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'clarifai/custom/css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+
+{% block main %}
+
+{% endblock main %}
+
+<script src="{% static 'clarifai/jquery/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'clarifai/uikit/js/uikit.min.js' %}"></script>
+<script src="{% static 'clarifai/uikit/js/uikit-icons.min.js' %}"></script>
+<script src="{% static 'clarifai/selectize/js/standalone/selectize.min.js' %}"></script>
+<script src="{% static 'clarifai/swal/sweetalert-2.0.6.min.js' %}"></script>
+<script src="{% static 'clarifai/custom/js/main.js' %}"></script>
+
+{% block script %}
+
+{% endblock script %}
+</body>
+</html>

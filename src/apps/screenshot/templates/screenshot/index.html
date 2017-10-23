@@ -1,0 +1,19 @@
+{% extends 'clarifai/layout/base.html' %}
+
+{% block page_title %}
+    PUnited | clarifai Custom Vision AI API
+{% endblock page_title %}
+
+{% block main %}
+    <h1>
+        Clarifai API | Index <Page> </Page>
+    </h1>
+
+    <ul>
+        <li>
+            <a href="{% url 'clarifai-api:add_images_with_concepts' %}">
+                Add Images & Concepts
+            </a>
+        </li>
+    </ul>
+{% endblock main %}
