@@ -1,9 +1,8 @@
 from django.conf.urls import url
 
-from . import views
+from .views import (ScreenshotFormView, ScreenshotJobAPI)
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^/')
+    url(r'^$', ScreenshotFormView.as_view(), name='form'),
+    url(r'^api/v.1/generate-screenshot', ScreenshotJobAPI.as_view(), name="api-request-screenshot")
 ]
-

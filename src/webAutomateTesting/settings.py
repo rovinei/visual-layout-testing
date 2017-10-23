@@ -25,7 +25,10 @@ SECRET_KEY = 'm!mzc1dinq6pe1%oeddh)lit^(#)y3%m)9=m$sxd+*9lw8*4%t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'visual-browser-test.com',
+    'ce49900a.ngrok.io',
+]
 
 
 # Application definition
@@ -38,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.clarifaiApi',
-    'apps.puBrowser'
+    'apps.puBrowser',
+    'apps.screenshot'
 ]
 
 MIDDLEWARE = [
@@ -119,4 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/upload/')
+MEDIA_URL = '/media/'

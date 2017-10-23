@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from . import views
 
 urlpatterns = [
-    url(r'^', admin.site.urls),
+    url(r'^$', views.redirect_view, name="root-domain"),
+    url(r'^admin/', admin.site.urls),
     url(r'^clarifai/', include('apps.clarifaiApi.urls', namespace='clarifai-api')),
-    url(r'^screenshot', include('apps.puBrowser.urls'), name="pu-browser")
+    url(r'^screenshot/', include('apps.screenshot.urls', namespace="screenshot-app"), name="screenshot-app")
 ]
