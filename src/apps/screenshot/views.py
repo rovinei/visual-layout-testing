@@ -174,12 +174,10 @@ class ScreenshotJobAPI(View):
             chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
             driver = webdriver.Remote(command_executor=HUB_URL,
                                       desired_capabilities=chrome_options.to_capabilities())
-
-        print("MEDIA URL ==> "+settings.MEDIA_URL)
         driver.get(page_url)
         driver.maximize_window()
         random_str = random_string(64)
-        img_path = "/Users/kit/Development/Projects/webAutomateTesting/src/media/upload/projects/punited/"+random_str+".png"
+        img_path = os.path.join(settings.MEDIA_ROOT, "projects/punited/"+random_str+".png")
         time.sleep(3)
 
         try:
