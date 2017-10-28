@@ -1,5 +1,5 @@
 from __future__ import (unicode_literals, absolute_import)
-from .models import User
+from project.apps.accounts.models import User
 
 
 class AccountAuthBackend(object):

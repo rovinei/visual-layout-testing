@@ -35,38 +35,40 @@ class ScreenshotFormView(View):
         })
 
         all_browsers = BrowserStackAvailableBrowser.objects.all()
-        if all_browsers is not None:
-            os_versions = all_browsers.values('os', 'os_version').distinct()
+        os_versions = all_browsers.values('os_platform', 'os_version').distinct()
+        if all_browsers.exists():
+            contexts.update({
+                'd_len': len(os_versions)
+            })
             for os_item in os_versions:
                 os_obj = dict()
                 browsers = all_browsers.filter(
-                    os=os_item['os'],
-                    os_version=os_item['os_version']).order_by('os')
+                    os_platform=os_item['os_platform'],
+                    os_version=os_item['os_version'])
                 browser_versions = browsers.values('browser').distinct()
-
                 browser_arr = list()
-                for b in browser_versions:
+                for bs in browser_versions:
                     brows = dict()
-                    brows_items = browsers.filter(browser=b['browser']).order_by('browser')
-                    browser_icon_url = "screenshot/custom/img/icons/svg/"+str(b['browser']).strip(" ").replace(" ", "-").lower()+".svg"
+                    brows_items = browsers.filter(browser=bs['browser'])
+                    browser_icon_url = "screenshot/custom/img/icons/svg/"+str(bs['browser']).strip(" ").replace(" ", "-").lower()+".svg"
                     brows.update({
-                        'browser_name': b['browser'],
+                        'browser_name': bs['browser'],
                         'icon_url': browser_icon_url,
                         'browser_versions': brows_items
                     })
                     browser_arr.append(brows)
 
-                os_name = os_item['os'] + ' ' + os_item['os_version']
-                icon_url = "screenshot/custom/img/icons/svg/"+str(os_item['os']).strip(" ").replace(" ", "-").lower()+".svg"
+                os_name = os_item['os_platform'] + ' ' + os_item['os_version']
+                icon_url = "screenshot/custom/img/icons/svg/"+str(os_item['os_platform']).strip(" ").replace(" ", "-").lower()+".svg"
                 os_obj.update({
                     'os_name': os_name,
-                    'os_platform': os_item['os'],
+                    'os_platform': os_item['os_platform'],
                     'icon_url': icon_url,
                     'browsers': browser_arr
                 })
                 os_arr.append(os_obj)
 
-            contexts.update({'os_browsers': os_arr})
+            contexts.update({'os_browsers': os_arr, 'data_len': len(os_arr)})
         else:
             contexts.update({'os_browsers': os_arr})
 
@@ -100,7 +102,9 @@ class ScreenshotJobAPI(View):
         return render(request, 'screenshot/screenshot_form.html', contexts)
 
     def post(self, request):
-
+        """
+        Accept get method
+        """
         chrome_options = webdriver.ChromeOptions()
         page_url = request.POST.get('page_url')
         mac_res = request.POST.get('mac_res')

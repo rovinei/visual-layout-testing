@@ -68,7 +68,7 @@
                         <div class="inner">
                             <div class="heading large uk-text-center">
                                 <h1 class="heading-title uk-text-center">
-                                    Screenshot website for cross browser compatibility
+                                    Screenshot website for {{ data_len }} cross browser compatibility {{ d_len }}
                                 </h1>
                             </div>
 
@@ -165,16 +165,16 @@
                                                         {% for browser in browser_type.browser_versions %}
                                                         <li class="item">
 
-                                                            {% if browser.os == 'ios' or browser.os == 'android' %}
+                                                            {% if browser.os_platform == 'ios' or browser.os_platform == 'android' or browser.os_platform == 'ipad' %}
 
-                                                            <input id="{{ browser.readable_name }}" name="browsers" value="{{ browser.os|add:'|'|add:browser.os_version|add:'|'|add:browser.browser|add:'|'|add:browser.device }}" type="checkbox" class="browser-custom-checkbox custom-checkbox">
+                                                            <input id="{{ browser.readable_name }}" name="browsers" value="{{ browser.os_platform|add:'|'|add:browser.os_version|add:'|'|add:browser.browser|add:'|'|add:browser.device }}" type="checkbox" class="browser-custom-checkbox custom-checkbox">
                                                             <label for="{{ browser.readable_name }}">
                                                                 {{ browser.device }}
                                                             </label>
 
                                                             {% else %}
 
-                                                            <input id="{{ browser.readable_name }}" name="browsers" value="{{ browser.os|add:'|'|add:browser.os_version|add:'|'|add:browser.browser|add:'|'|add:browser.browser_version }}" type="checkbox" class="browser-custom-checkbox custom-checkbox">
+                                                            <input id="{{ browser.readable_name }}" name="browsers" value="{{ browser.os_platform|add:'|'|add:browser.os_version|add:'|'|add:browser.browser|add:'|'|add:browser.browser_version }}" type="checkbox" class="browser-custom-checkbox custom-checkbox">
                                                             <label for="{{ browser.readable_name }}">
                                                                 {{ browser.browser_version|floatformat }}
                                                             </label>

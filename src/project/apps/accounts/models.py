@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import uuid
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import PermissionsMixin
@@ -9,8 +10,6 @@ from django.core.exceptions import ValidationError
 from django.utils.html import format_html
 from django.conf import settings
 from .utils import handle_upload_avatar
-import uuid
-
 
 class UserManager(BaseUserManager):
 
@@ -35,13 +34,14 @@ class UserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         extra_fields.setdefault(str('is_staff'), False)
         extra_fields.setdefault(str('is_admin'), False)
+        extra_fields.setdefault(str('is_superuser'), False)
         user = self._create_user(email, password, **extra_fields)
         return user
 
     def create_superuser(self, email, password, **extra_fields):
         extra_fields.setdefault(str('is_staff'), True)
         extra_fields.setdefault(str('is_admin'), True)
-
+        extra_fields.setdefault(str('is_superuser'), True)
         if extra_fields.get(str('is_admin')) is not True:
             raise ValueError('Superuser must have is_admin=True.')
 
@@ -84,22 +84,27 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.email
 
     def has_perm(self, perm, obj=None):
-        pass
+        if self.is_superuser:
+            return True
+        else:
+            return False
 
     def has_module_perms(self, app_label):
-        pass
+        if self.is_superuser:
+            return True
+        else:
+            return False
 
     def get_username(self):
         return self.email
 
-    def clean(self):
-
+    def save(self, *args, **kwargs):
         def generate_uid():
             return str(uuid.uuid4()).replace('-', "")
 
         def existed(identifier):
-            user = self.objects.filter(uid=identifier).first()
-            return None not in user
+            user = self.__class__.objects.filter(uid=identifier).first()
+            return user is not None
 
         def check_existed_user():
             uid = generate_uid()
@@ -110,16 +115,15 @@ class User(AbstractBaseUser, PermissionsMixin):
                     raise ValidationError(
                         "Unique id is existed, already retried to the maximum time, Please resubmit the form."
                     )
-
             self.uid = uid
-
         check_existed_user()
-
-    def save(self, *args, **kwargs):
-        super(self, User).save(*args, **kwargs)
+        super(User, self).save(*args, **kwargs)
 
 
 class Department(models.Model):
+    """
+    Department for employee
+    """
     name = models.CharField(max_length=191, verbose_name=_("Department Name"), null=False, blank=False)
     description = models.TextField(verbose_name=_("Description"), blank=True, null=True)
     created_at = models.DateTimeField(verbose_name=_("Created Date"), auto_now=False, auto_now_add=True)
@@ -138,8 +142,7 @@ class Employee(models.Model):
     Employee ORM model
 
     """
-    uid = models.UUIDField(editable=False, unique=True, verbose_name=_("Unique ID"), db_index=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     first_name = models.CharField(verbose_name=_("First name"), max_length=255, blank=True, null=True)
     last_name = models.CharField(verbose_name=_("Last name"), max_length=255, blank=True, null=True)
     username = models.CharField(verbose_name=_("Username"), max_length=255, blank=True, null=True)
@@ -158,33 +161,7 @@ class Employee(models.Model):
 
     def __unicode__(self):
         return self.username
-
-    def clean(self):
-
-        def generate_uid():
-            return str(uuid.uuid4()).replace('-', "")
-
-        def existed(identifier):
-            staff = self.objects.filter(uid=identifier).first()
-            return None not in staff
-
-        def check_existed_user():
-            uid = generate_uid()
-            if existed(uid):
-                try:
-                    check_existed_user()
-                except RuntimeError:
-                    raise ValidationError(
-                        "Unique id is existed, already retried to the maximum time, Please resubmit the form."
-                    )
-
-            self.uid = uid
-
-        check_existed_user()
-
-    def save(self, *args, **kwargs):
-        super(self, Employee).save(*args, **kwargs)
-
+    
 
 class Customer(models.Model):
 
@@ -192,7 +169,7 @@ class Customer(models.Model):
     Customer account detail, this one to one relationship with customer account authentication
     """
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     first_name = models.CharField(verbose_name=_("First name"), max_length=255, blank=True, null=True)
     last_name = models.CharField(verbose_name=_("Last name"), max_length=255, blank=True, null=True)
     username = models.CharField(verbose_name=_("Username"), max_length=255, blank=True, null=True)

@@ -33,3 +33,6 @@ class ScreenshotAPIForm(forms.Form):
     )
 
 
+class CreateBrowserForm(forms.ModelForm):
+    class Meta:
+        exclude = ('created_at', 'updated_at', 'readable_name',)

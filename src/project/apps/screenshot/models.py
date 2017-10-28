@@ -70,7 +70,7 @@ class BrowserStackAvailableBrowser(models.Model):
     in order to ensure the the matching rate between application and BrowserStack data
     """
     readable_name = models.CharField(max_length=255, blank=True, null=True)
-    os = models.CharField(max_length=15, blank=False, null=False)
+    os_platform = models.CharField(max_length=15, blank=False, null=False)
     os_version = models.CharField(max_length=191, blank=False, null=False)
     browser = models.CharField(max_length=50, blank=False, null=False)
     browser_version = models.CharField(max_length=50, blank=True, null=True)
@@ -82,28 +82,20 @@ class BrowserStackAvailableBrowser(models.Model):
     class Meta:
         verbose_name = 'browser'
         verbose_name_plural = 'browsers'
-        ordering = ('os', 'os_version', 'browser')
-
-    def clean(self):
-        if isinstance(self.real_device, bool):
-            self.readable_name = str(
-                str(self.os).replace(' ', '-') + " " +
-                str(self.os_version).replace(' ', '-') + " " +
-                str(self.browser).replace(' ', '-') + " " +
-                str(self.device).replace(' ', '-')
-            ).replace(' ', '_')
-        else:
-            self.readable_name = str(
-                str(self.os).replace(' ', '-') + " " +
-                str(self.os_version).replace(' ', '-') + " " +
-                str(self.browser).replace(' ', '-') + " " +
-                str(self.browser_version).replace(' ', '-')
-            ).replace(' ', '_')
+        ordering = ('os_platform', 'os_version', 'browser')
 
     def __str__(self):
-        return str(self.readable_name).replace(['-', '_'], ' ')
+        return str(self.readable_name).replace('_', ' ')
 
     def __unicode__(self):
-        return str(self.readable_name).replace('-', ' ')
+        return str(self.readable_name).replace('_', ' ')
 
-
+    def save(self, *args, **kwargs):
+        if isinstance(self.real_mobile, bool):
+            self.readable_name = str(self.os_platform).replace(' ', '-') + " " + str(self.os_version).replace(' ', '-') + " " + str(self.browser).replace(' ', '-') + " " + str(self.device).replace(' ', '-')
+            self.readable_name = str(self.readable_name).replace(' ', '_')
+        else:
+            self.readable_name = str(self.os_platform).replace(' ', '-') + " " + str(self.os_version).replace(' ', '-') + " " + str(self.browser).replace(' ', '-') + " " + str(self.browser_version).replace(' ', '-')
+            self.readable_name = str(self.readable_name).replace(' ', '_')
+            
+        super(BrowserStackAvailableBrowser, self).save(*args, **kwargs)
