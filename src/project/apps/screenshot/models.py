@@ -92,10 +92,18 @@ class BrowserStackAvailableBrowser(models.Model):
 
     def save(self, *args, **kwargs):
         if isinstance(self.real_mobile, bool):
-            self.readable_name = str(self.os_platform).replace(' ', '-') + " " + str(self.os_version).replace(' ', '-') + " " + str(self.browser).replace(' ', '-') + " " + str(self.device).replace(' ', '-')
+            real_mobile = 1 if self.real_mobile is True else 0
+            self.readable_name = str(self.os_platform).replace(' ', '-') + " " + \
+                                 str(self.os_version).replace(' ', '-') + " " + \
+                                 str(self.browser).replace(' ', '-') + " " + \
+                                 str(self.device).replace(' ', '-') + " " + \
+                                 str(real_mobile)
             self.readable_name = str(self.readable_name).replace(' ', '_')
         else:
-            self.readable_name = str(self.os_platform).replace(' ', '-') + " " + str(self.os_version).replace(' ', '-') + " " + str(self.browser).replace(' ', '-') + " " + str(self.browser_version).replace(' ', '-')
+            self.readable_name = str(self.os_platform).replace(' ', '-') + " " + \
+                                 str(self.os_version).replace(' ', '-') + " " + \
+                                 str(self.browser).replace(' ', '-') + " " + \
+                                 str(self.browser_version).replace(' ', '-')
             self.readable_name = str(self.readable_name).replace(' ', '_')
             
         super(BrowserStackAvailableBrowser, self).save(*args, **kwargs)

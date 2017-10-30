@@ -35,11 +35,10 @@ class ScreenshotFormView(View):
         })
 
         all_browsers = BrowserStackAvailableBrowser.objects.all()
-        os_versions = all_browsers.values('os_platform', 'os_version').distinct()
-        if all_browsers.exists():
-            contexts.update({
-                'd_len': len(os_versions)
-            })
+        os_versions = all_browsers.order_by('-os_platform', '-os_version').values('os_platform', 'os_version').distinct()
+        if os_versions.exists():
+            print(len(os_versions))
+            
             for os_item in os_versions:
                 os_obj = dict()
                 browsers = all_browsers.filter(
@@ -68,7 +67,7 @@ class ScreenshotFormView(View):
                 })
                 os_arr.append(os_obj)
 
-            contexts.update({'os_browsers': os_arr, 'data_len': len(os_arr)})
+            contexts.update({'os_browsers': os_arr})
         else:
             contexts.update({'os_browsers': os_arr})
 
