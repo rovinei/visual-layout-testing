@@ -1,0 +1,71 @@
+{% extends 'automatetest/layout/base.html' %}
+{% load staticfiles %}
+{% block page_title %} Browser testig page {% endblock page_title %}
+
+{% block header %}
+    {% include 'automatetest/partials/top_fixed_header.html' %}
+{% endblock header %}
+
+{% block main %}
+
+<div class="page-content uk-flex uk-flex-stretch">
+
+    <div class="left_content__wrapper uk-flex-1">
+        <div class="section">
+            <div class="custom-medium__container padding-large-bottom">
+
+                <div class="heading">
+                    <h1 class="title no-margin">
+                        Manage Your Projects
+                    </h1>
+                    <span>Select a project to process testing.</span>
+                </div>
+                <div class="uk-width-1-1">
+                    <button onclick="PUNITED.automateAPI.createNewProject()" class="uk-button uk-button-medium uk-button-primary uk-font-large">
+                        Create New Project
+                    </button>
+                </div>
+                <div class="project_list">
+                    {% for project in projects %}
+                    <div class="project_item" data-uuid="{{ project.project_uuid }}">
+                        <div class="project_info">
+                            <a class="project_name" href="{% url 'automate:get_project' project_uuid=project.project_uuid %}">
+                                {{ project.project_name }}
+                            </a>
+                            <time class="project_time">
+                                Created {{ project.created_at|date:"M d Y, H:i" }}
+                            </time>
+                        </div>
+                        <div class="right">
+                            <a class="action-icon" href="{% url 'automate:get_project' project_uuid=project.project_uuid %}">
+                                <svg class="svg-icon eye" data-name="eye" width="24" height="20" viewBox="0 0 24 20" xmlns="http://www.w3.org/2000/svg"><path class="icon-stroke" d="M12,2.5C7.5,2.5,3.5,5.1,1.5,9c-0.3,0.6-0.3,1.3,0,1.9c2.1,3.9,6,6.5,10.5,6.5c4.5,0,8.5-2.6,10.5-6.5c0.3-0.6,0.3-1.3,0-1.9C20.5,5.1,16.5,2.5,12,2.5z"></path><circle class="icon-stroke" cx="12" cy="10" r="3.8"></circle></svg>
+                                <span class="icon-label">Begin test</span>
+                            </a>
+                            <span class="action-icon key-icon-edit">
+                                <svg class="svg-icon edit" data-name="edit" width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><path class="icon-stroke" d="M8.8,3.7H2c-0.5,0-1,0.4-1,1v10c0,0.5,0.4,1,1,1h10c0.5,0,1-0.4,1-1V8"></path><line class="icon-stroke" x1="6" y1="10.9" x2="16" y2="0.7"></line></svg>
+                                <span class="icon-label">Edit</span>
+                            </span>
+                            <span class="action-icon key-icon-delete">
+                                <svg class="svg-icon trash" data-name="trash" width="16" height="19" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg"><g transform="translate(-6 -4)"><path class="icon-stroke" d="M11 9V6.01c0-.558.45-1.01.99-1.01h4.02c.546 0 .99.443.99 1.01V9"></path><path class="icon-stroke" d="M7 9h14"></path><path class="icon-stroke" d="M12 12v7M16 12v7M20 12v9.005c0 .55-.456.995-1.002.995H9.002C8.45 22 8 21.544 8 21.005V12"></path></g></svg>
+                                <span class="icon-label">Delete</span>
+                            </span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock main %}
+
+{% block script_dependencies %}
+{% endblock script_dependencies%}
+
+{% block script %}
+<script>
+</script>
+{% endblock script %}

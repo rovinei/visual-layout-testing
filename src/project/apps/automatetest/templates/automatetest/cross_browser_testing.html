@@ -1,0 +1,37 @@
+{% extends 'automatetest/layout/base.html' %}
+{% load staticfiles %}
+{% block page_title %} Browser testig page {% endblock page_title %}
+
+{% block header %}
+    {% include 'automatetest/partials/top_fixed_header.html' %}
+{% endblock header %}
+
+{% block main %}
+
+<div class="page-content uk-flex uk-flex-stretch">
+
+    {% include 'automatetest/partials/sidebar.html' %}
+
+    <div class="left_content__wrapper uk-flex-1">
+        <div class="section">
+            <div class="uk-container">
+
+                {% include 'automatetest/components/browsers_form.html' %}
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock main %}
+
+{% block script_dependencies %}
+
+{% endblock script_dependencies%}
+
+{% block script %}
+<script>
+</script>
+{% endblock script %}
+

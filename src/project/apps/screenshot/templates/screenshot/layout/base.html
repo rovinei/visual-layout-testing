@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <title>{% block page_title %}{% endblock page_title %}</title>
     <meta name="csrfmiddlewaretoken" content="{{ csrf_token }}">
-    <link href="{% static 'screenshot/custom/font/flaticon.css' %}" rel="stylesheet">
-    <link href="{% static 'screenshot/selectize/css/selectize.css' %}" rel="stylesheet">
-    <link href="{% static 'screenshot/selectize/css/selectize.default.css' %}" rel="stylesheet">
-    <link href="{% static 'screenshot/selectize/css/selectize.bootstrap3.css' %}" rel="stylesheet">
-    <link href="{% static 'screenshot/uikit/css/uikit.min.css' %}" rel="stylesheet">
-    <!--<link href="{% static 'screenshot/uikit/css/uikit-rtl.min.css' %}" rel="stylesheet">-->
-    <link href="{% static 'screenshot/swal/sweetalert.min.css' %}" rel="stylesheet">
-    <link href="{% static 'screenshot/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
-    <link href="{% static 'screenshot/custom/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'screenshot/custom/font/flaticon.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <link href="{% static 'screenshot/selectize/css/selectize.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <link href="{% static 'screenshot/selectize/css/selectize.default.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <link href="{% static 'screenshot/selectize/css/selectize.bootstrap3.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <link href="{% static 'screenshot/uikit/css/uikit.min.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <!--<link href="{% static 'screenshot/uikit/css/uikit-rtl.min.css' %}" rel="stylesheet" crossorigin="anonymous">-->
+    <link href="{% static 'screenshot/swal/sweetalert.min.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <link href="{% static 'screenshot/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <link href="{% static 'screenshot/custom/css/style.css' %}" rel="stylesheet" crossorigin="anonymous">
 </head>
 <body>
 
@@ -21,12 +21,16 @@
 
 {% endblock main %}
 
-<script src="{% static 'screenshot/jquery/jquery-3.2.1.min.js' %}"></script>
-<script src="{% static 'screenshot/uikit/js/uikit.min.js' %}"></script>
-<script src="{% static 'screenshot/uikit/js/uikit-icons.min.js' %}"></script>
-<script src="{% static 'screenshot/selectize/js/standalone/selectize.min.js' %}"></script>
-<script src="{% static 'screenshot/swal/sweetalert-2.0.6.min.js' %}"></script>
-<script src="{% static 'screenshot/custom/js/main.js' %}"></script>
+<script src="{% static 'screenshot/jquery/jquery-3.2.1.min.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'screenshot/uikit/js/uikit.min.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'screenshot/uikit/js/uikit-icons.min.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'screenshot/selectize/js/standalone/selectize.min.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'screenshot/swal/sweetalert-2.0.6.min.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'screenshot/custom/js/main.js' %}" crossorigin="anonymous"></script>
+
+{% block script_dependencies %}
+
+{% endblock script_dependencies%}
 
 {% block script %}
 

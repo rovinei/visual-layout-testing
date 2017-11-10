@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.http import HttpResponseBadRequest
 
 
@@ -8,3 +8,5 @@ def redirect_view(request):
         return redirect('/admin/')
     else:
         return HttpResponseBadRequest()
+
+

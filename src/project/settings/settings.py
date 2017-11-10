@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -20,13 +21,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'm!mzc1dinq6pe1%oeddh)lit^(#)y3%m)9=m$sxd+*9lw8*4%t'
+SECRET_KEY = config('APP_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = [
     'visual-browser-test.com',
+    'localhost',
+    '127.0.0.1',
     'b2209ee6.ngrok.io',
 ]
 
@@ -40,9 +43,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
+
     'project.apps.clarifaiApi',
     'project.apps.screenshot',
-    'project.apps.accounts'
+    'project.apps.accounts',
+    'project.apps.automatetest'
 ]
 
 MIDDLEWARE = [
@@ -60,7 +66,9 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'project/templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,18 +83,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
-AUTH_USER_MODEL = 'accounts.User'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('WEB_AUTO_TEST_DB_NAME'),
-        'USER': os.environ.get('WEB_AUTO_TEST_DB_USER'),
-        'PASSWORD': 'MyprivatesqlserverP@$$w0rd',
-        'HOST': os.environ.get('WEB_AUTO_TEST_DB_HOST'),
-        'PORT': os.environ.get('WEB_AUTO_TEST_DB_PORT'),
+        'NAME': config('WEB_AUTO_TEST_DB_NAME'),
+        'USER': config('WEB_AUTO_TEST_DB_USER'),
+        'PASSWORD': config('WEB_AUTO_TEST_DB_PASS'),
+        'HOST':config('WEB_AUTO_TEST_DB_HOST'),
+        'PORT': config('WEB_AUTO_TEST_DB_PORT'),
     }
 }
 
@@ -129,5 +136,35 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/upload/')
-MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media/upload/')
+# MEDIA_URL = '/media/'
+
+AWS_S3_USER = config('AWS_S3_USER')
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_DOMAIN = '{}.s3.amazonaws.com'.format(AWS_STORAGE_BUCKET_NAME)
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'project/static'),
+
+]
+
+AWS_STATIC_LOCATION = 'static'
+# STATIC_URL = 'https://{0}/{1}/'.format(AWS_S3_DOMAIN, AWS_STATIC_LOCATION)
+# STATICFILES_STORAGE = 'project.settings.storage_backend.StaticStorage'
+
+AWS_MEDIA_LOCATION = 'media'
+MEDIA_URL = 'https://{0}/{1}/'.format(AWS_S3_DOMAIN, AWS_MEDIA_LOCATION)
+DEFAULT_FILE_STORAGE = 'project.settings.storage_backend.MediaStorage'
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+
+BS_API_USER = config('BS_API_USER')
+BS_API_KEY = config('BS_API_KEY')
+BS_HUB_URL = 'http://{0}:{1}@hub.browserstack.com:80/wd/hub'.format(BS_API_USER, BS_API_KEY)
+
+GALEN_REPORT_DIR = os.path.join(BASE_DIR, 'project/reports')

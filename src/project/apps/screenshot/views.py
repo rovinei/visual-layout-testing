@@ -4,20 +4,15 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.generic.base import View
 from django.conf import settings
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.common import exceptions as selenium_exception
-from selenium.webdriver.chrome.options import Options
-import selenium.webdriver.support.ui as ui
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver import ActionChains
-from selenium import webdriver
 from .forms import ScreenshotAPIForm
 from .models import BrowserStackAvailableBrowser
+from galenpy.galen_webdriver import GalenRemoteWebDriver
+from galenpy.galen_api import (Galen, generate_galen_report)
+from galenpy.galen_report import TestReport
+from galenpy.exception import (FileNotFoundError, IllegalMethodCallException)
 import time
 import os
 from .util import (random_string)
-
-HUB_URL = 'http://localhost:4444/wd/hub'
 
 
 class ScreenshotFormView(View):
@@ -86,66 +81,5 @@ class ScreenshotFormView(View):
         return render(request, 'screenshot/screenshot_form.html', contexts)
 
 
-class ScreenshotJobAPI(View):
 
-    def get(self, request):
-        contexts = dict()
-        contexts.update({
-            'page_info': {
-                'title': 'Automate Screenshot API | Potential United',
-                'meta': {
-                    'keyword': 'Automate testing, cross browser testing, visual regression testing, website layout test'
-                }
-            }
-        })
-        return render(request, 'screenshot/screenshot_form.html', contexts)
-
-    def post(self, request):
-        """
-        Accept get method
-        """
-        chrome_options = webdriver.ChromeOptions()
-        page_url = request.POST.get('page_url')
-        mac_res = request.POST.get('mac_res')
-        win_res = request.POST.get('win_res')
-        screenshot_quality = request.POST.get('screenshot_quality')
-        browsers = request.POST.getlist('browsers')
-        os_platform, os_version, browser, device_or_browser_version = browsers[0].split('|')
-
-        capabilities = DesiredCapabilities.CHROME.copy()
-
-        if os_platform.lower() == 'os x':
-            capabilities['platform'] = "MAC"
-            capabilities['version'] = device_or_browser_version
-            driver = webdriver.Remote(command_executor=HUB_URL,
-                                      desired_capabilities=capabilities)
-
-        elif os_platform.lower() == 'windows':
-            capabilities['platform'] = "WINDOWS"
-            capabilities['version'] = device_or_browser_version
-            driver = webdriver.Remote(command_executor=HUB_URL,
-                                      desired_capabilities=capabilities)
-
-        elif os_platform.lower() == 'android' or os_platform.lower() == 'ios':
-            mobile_emulation = {"deviceName": device_or_browser_version}
-            chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
-            driver = webdriver.Remote(command_executor=HUB_URL,
-                                      desired_capabilities=chrome_options.to_capabilities())
-        driver.get(page_url)
-        driver.maximize_window()
-        random_str = random_string(64)
-        img_path = os.path.join(settings.MEDIA_ROOT, "projects/punited/"+random_str+".png")
-        time.sleep(3)
-
-        try:
-            status_screenshot = driver.save_screenshot(img_path)
-            if status_screenshot:
-                return JsonResponse({"status": "200", "img_path": img_path})
-            else:
-                return JsonResponse({"status": "500", "error_message": "Failed to capture screenshot"})
-        except selenium_exception.WebDriverException as webExe:
-            print(webExe.msg)
-            return JsonResponse({"status": "500", "error_message": "Failed to capture screenshot"})
-        finally:
-            driver.quit()
 

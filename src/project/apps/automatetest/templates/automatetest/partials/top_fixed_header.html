@@ -1,0 +1,37 @@
+<div class="page-header uk-flex-inline">
+
+    <div class="global_nav uk-flex uk-flex-center uk-flex-middle" id="sidebar_toggler">
+        <button type="button" class="uk-button uk-button-default uk-button-small">
+            <i class="fa fa-navicon"></i>
+        </button>
+    </div>
+
+    <div class="global_nav right">
+        <ul class="global_nav_ul uk-flex-inline">
+            <li>
+                <a href="{% url 'clarifai-api:add_images_with_concepts' %}">
+                    Project
+                </a>
+            </li>
+            {% if current_project %}
+            <li class="seperator">
+                <i class="fa fa-chevron-right"></i>
+            </li>
+            <li>
+                <a href="{% url 'automate:get_project' project_uuid=current_project.uuid %}">
+                    {{ current_project.name }}
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <div class="globla_nav center">
+
+    </div>
+
+    <div class="globla_nav left">
+
+    </div>
+
+</div>

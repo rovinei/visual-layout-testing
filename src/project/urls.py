@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^$', views.redirect_view, name="root-domain"),
     url(r'^admin/', admin.site.urls),
     url(r'^clarifai/', include('project.apps.clarifaiApi.urls', namespace='clarifai-api')),
-    url(r'^screenshot/', include('project.apps.screenshot.urls', namespace="screenshot-app"), name="screenshot-app")
+    url(r'^screenshot/', include('project.apps.screenshot.urls', namespace="screenshot-app")),
+    url(r'^automate/', include('project.apps.automatetest.urls', namespace="automate"))
 ]

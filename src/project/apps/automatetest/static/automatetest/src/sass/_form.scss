@@ -1,0 +1,159 @@
+.custom-card{
+    position: relative;
+    margin:0 auto;
+
+    &:first-child{
+        padding: 0;
+
+        &:after{
+            content:"";
+        }
+    }
+
+    .uploadfile-btn{
+        width: 100%;
+        border: 3px dashed #e4e4e4;
+        min-height: 180px;
+        color: #5e5e5e;
+        font-size: 1.1em;
+
+        .fa{
+            font-size: 1.6em;
+            display: block;
+        }
+    }
+
+    .inner{
+        padding: 30px;
+        background: #fff;
+        @include box-sizing(border-box);
+        @include prefixer(box-shadow, inset 0 -1px 0 0 rgba(27, 38, 52, 0.12), webkit moz ms);
+    }
+
+    .uk-form-custom{
+        display: block;
+    }
+
+}
+
+.browser_choice__wrapper{
+    position: relative;
+    width: 100%;
+    @include clearfix();
+}
+
+.os_platform_list{
+    position: relative;
+    width: 100%;
+    @include clearfix();
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    .os_platform_item{
+        width: 100%;
+        @include prefixer(box-shadow, inset 0 -1px 0 0 rgba(27, 38, 52, 0.12), webkit moz ms);
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        @include clearfix
+
+        &:last-child{
+            box-shadow: none;
+            margin-bottom: 0;
+        }
+        .os_box_name{
+            float: left;
+            max-width: 120px;
+            min-width: 120px;
+            margin-right: 40px;
+
+            .fa{
+                font-size: 2.5em;
+            }
+
+            img{
+                display: block;
+                max-width: 80px;
+            }
+
+        }
+
+        span.os_name{
+            display: block;
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+    }
+
+    .browser_and_device__list{
+        float: left;
+    }
+
+    .browser_collection{
+        width: 25%;
+        min-height: 1px;
+        float: left;
+        padding: 0 15px;
+        @include box-sizing(border-box);
+
+        img {
+            display: block;
+            width: 25px;
+        }
+        .fa{
+            font-size: 1.3em;
+        }
+
+        .version_list{
+            margin: 0;
+            list-style-type: none;
+            padding-left: 15px;
+        }
+
+        .item{
+            display: inline-block;
+            margin-right: 4px;
+            margin-bottom: 8px;
+            position: relative;
+            cursor: pointer;
+
+            label{
+                position: relative;
+                padding: 4px;
+                z-index: 1;
+                cursor: pointer;
+                @include prefixer(transition, background 0.2s ease, webkit moz ms);
+
+                &:hover{
+                    background: #7e7e7e;
+                    color: #FFF;
+                }
+            }
+
+            .browser-custom-checkbox{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 0;
+                width: 0;
+                height: 0;
+                margin:0;
+                visibility: hidden;
+
+                &:checked{
+                    & ~ label{
+                        background: lighten($flat_blue_color, 20%);
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+
