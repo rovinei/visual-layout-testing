@@ -15,7 +15,7 @@ class Project(models.Model):
     Test project
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='projects')
-    project_uuid = models.CharField(max_length=36, unique=True)
+    project_uuid = models.CharField(max_length=64, unique=True)
     project_name = models.CharField(max_length=255)
     description = models.TextField(blank=True, default="")
     created_at = models.DateTimeField(auto_now_add=True, auto_now=False)
@@ -64,7 +64,7 @@ class TestBuild(models.Model):
     Test build version of a project
     """
     name = models.CharField(max_length=255)
-    build_uuid = models.CharField(max_length=36, unique=True)
+    build_uuid = models.CharField(max_length=64, unique=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='builds')
     created_at = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated_at = models.DateTimeField(auto_now_add=False, auto_now=True)
@@ -96,7 +96,7 @@ class TestBuild(models.Model):
             self.build_uuid = uid
 
         if self.build_uuid is None or self.build_uuid == '':
-            check_existed_uid()()
+            check_existed_uid()
         super(TestBuild, self).save(*args, **kwargs)
 
 
@@ -107,7 +107,7 @@ class TestSession(models.Model):
     """
 
     title = models.CharField(max_length=255, blank=True, null=True)
-    session_uuid = models.CharField(max_length=36, unique=True)
+    session_uuid = models.CharField(max_length=64, unique=True)
     build = models.ForeignKey(TestBuild, on_delete=models.CASCADE, related_name='sessions')
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='sessions')
     created_at = models.DateTimeField(auto_now_add=True, auto_now=False)
@@ -140,15 +140,60 @@ class TestSession(models.Model):
             self.session_uuid = uid
 
         if self.session_uuid is None or self.session_uuid == '':
-            check_existed_uid()()
+            check_existed_uid()
         super(TestSession, self).save(*args, **kwargs)
+
+
+class GalenReport(models.Model):
+    """
+    Report reference generate by Galen Framework
+    """
+    report_uuid = models.CharField(max_length=64, unique=True)
+    title = models.CharField(max_length=500, blank=True, null=True)
+    description = models.TextField(blank=True, default='')
+    report_dir = models.CharField(max_length=500)
+    project = models.ForeignKey(Project, on_delete=models.SET_NULL, related_name='reports', null=True)
+    build = models.ForeignKey(TestBuild, on_delete=models.SET_NULL, related_name='reports', null=True)
+    session = models.ForeignKey(TestSession, on_delete=models.SET_NULL, related_name='reports', null=True)
+    created_at = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated_at = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    def __str__(self):
+        return str(self.title).capitalize()
+
+    def __unicode__(self):
+        return str(self.title).capitalize()
+
+    def save(self, *args, **kwargs):
+        def generate_uid():
+            return str(uuid.uuid4()).replace('-', "")
+
+        def existed(identifier):
+            report = self.__class__.objects.filter(report_uuid=identifier).first()
+            return report
+
+        def check_existed_uid():
+            uid = generate_uid()
+            if existed(uid):
+                try:
+                    check_existed_uid()
+                except RuntimeError:
+                    raise ValidationError(
+                        "Unique id is existed, already retried to the maximum time, Please resubmit the form."
+                    )
+
+            self.report_uuid = uid
+
+        if self.report_uuid is None or self.report_uuid == '':
+            check_existed_uid()
+        super(GalenReport, self).save(*args, **kwargs)
 
 
 class ScreenshotImage(models.Model):
     """"
     Screenshot images
     """
-    screenshot_uuid = models.CharField(max_length=36, unique=True)
+    screenshot_uuid = models.CharField(max_length=64, unique=True)
     src = models.ImageField(upload_to=upload_screenshot, storage=MediaStorage)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='screenshots')
     build = models.ForeignKey(TestBuild, on_delete=models.CASCADE, related_name='screenshots')
@@ -183,5 +228,5 @@ class ScreenshotImage(models.Model):
             self.screenshot_uuid = uid
 
         if self.screenshot_uuid is None or self.screenshot_uuid == '':
-            check_existed_uid()()
+            check_existed_uid()
         super(ScreenshotImage, self).save(*args, **kwargs)

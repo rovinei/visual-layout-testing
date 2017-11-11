@@ -30,7 +30,7 @@ ALLOWED_HOSTS = [
     'visual-browser-test.com',
     'localhost',
     '127.0.0.1',
-    'b2209ee6.ngrok.io',
+    'edc89974.ngrok.io',
 ]
 
 

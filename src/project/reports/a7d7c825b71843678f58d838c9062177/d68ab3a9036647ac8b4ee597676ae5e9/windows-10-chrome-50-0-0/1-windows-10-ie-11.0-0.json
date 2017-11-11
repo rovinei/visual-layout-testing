@@ -1,0 +1,42 @@
+{
+  "testId" : "1-windows-10-ie-11.0-0",
+  "name" : "Windows 10 ie 11.0 0",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Windows 10 ie 11.0 0",
+      "status" : "error",
+      "time" : 1510297480877,
+      "includedTags" : [ ],
+      "excludedTags" : [ ],
+      "sections" : [ {
+        "name" : "",
+        "objects" : [ {
+          "name" : "== test ==",
+          "specs" : [ ]
+        }, {
+          "name" : "top",
+          "specs" : [ {
+            "status" : "error",
+            "place" : {
+              "filePath" : "/Users/rana/Desktop/visual-layout-testing/src/project/a.spec",
+              "lineNumber" : 9
+            },
+            "name" : "near: down 75 px top , -630 px left",
+            "errors" : [ "\"top\" is -1109px left instead of -630px" ],
+            "highlight" : [ "top", "down" ]
+          } ]
+        } ]
+      } ],
+      "objects" : {
+        "top" : {
+          "area" : [ 707, 395, 276, 165 ]
+        },
+        "down" : {
+          "area" : [ -126, 635, 630, 467 ]
+        }
+      },
+      "screenshot" : "layout-17-screenshot.png",
+      "type" : "layout"
+    } ]
+  }
+}

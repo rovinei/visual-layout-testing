@@ -6,7 +6,8 @@ from .models import (
     Project,
     TestBuild,
     TestSession,
-    ScreenshotImage
+    ScreenshotImage,
+    GalenReport
 )
 
 from .forms import ProjectCreationForm
@@ -31,6 +32,12 @@ class TestBuildAdmin(admin.ModelAdmin):
 @admin.register(TestSession)
 class TestSessionAdmin(admin.ModelAdmin):
     list_display = ('__str__',)
+    empty_value_display = '--None--'
+
+
+@admin.register(GalenReport)
+class GalenReportAdmin(admin.ModelAdmin):
+    list_display = ('__str__', 'project', 'created_at')
     empty_value_display = '--None--'
 
 

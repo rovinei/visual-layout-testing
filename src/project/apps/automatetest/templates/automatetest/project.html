@@ -7,19 +7,152 @@
 {% endblock header %}
 
 {% block main %}
-
+  <div class="page-content uk-flex uk-flex-stretch">
     {% include 'automatetest/partials/sidebar.html' %}
 
     <div class="left_content__wrapper uk-flex-1">
         <div class="section">
             <div class="uk-container">
 
+              <div class="custom-card">
+                <div class="inner">
+                  <div class="heading medium">
 
+                    <h1 class="">
+                      Builds
+                    </h1>
+                    <div class="uk-grid uk-grid-small">
+                      {% for build in builds %}
+                      <div class="uk-width-1-3">
+                        <div class="build_item">
+                          <div class="build_info">
+                            <span class="build_name uk-display-block">
+                              {{ build.name }}
+                            </span>
+                            <time class="time_info">
+                              Created {{ build.created_at|date:"M d Y, H:i" }}
+                            </time>
+                            <a href="#" class="uk-cover link_item">
+
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="custom-card">
+                <div class="inner">
+                  <div class="heading">
+
+                    <h1 class="">
+                      Sessions
+                    </h1>
+                    <div class="uk-grid uk-grid-small">
+                      {% for session in sessions %}
+                      <div class="uk-width-1-3">
+                        <div class="build_item">
+                          <div class="build_info">
+                            <span class="build_name uk-display-block">
+                              {{ session.title }}
+                            </span>
+                            <time class="time_info">
+                              {{ session.created_at|date:"M d Y, H:i" }}
+                            </time>
+                            <a href="#" class="uk-cover link_item">
+
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="custom-card">
+                <div class="inner">
+                  <div class="heading">
+
+                    <h1 class="">
+                      Reports
+                    </h1>
+                    <div class="uk-grid uk-grid-small">
+                      {% for report in reports %}
+                      <div class="uk-width-1-3">
+                        <div class="build_item">
+                          <div class="build_info">
+                            <span class="build_name uk-display-block">
+                              {{ report.title }}
+                            </span>
+                            <div class="">
+                              Build : {{ report.build.name }}
+                            </div>
+                            <time class="time_info">
+                              {{ report.created_at|date:"M d Y, H:i" }}
+                            </time>
+                            <a href="{% url 'automate:report_detail' report_uuid=report.report_uuid %}" class="uk-display-block link_item">
+                              See detail
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="custom-card">
+                <div class="inner">
+                  <div class="heading">
+
+                    <h1 class="">
+                      Screenshot Images
+                    </h1>
+                    <div class="uk-grid uk-grid-small">
+                      {% for screenshot in screenshots %}
+                      <div class="uk-width-1-3">
+                        <div class="build_item">
+                          <div class="build_info">
+                            <span class="name uk-display-block">
+                              {{ screenshot.title }}
+                            </span>
+                            <div class="">
+                              Build : {{ screenshot.build.name }}
+                            </div>
+                            <div class="">
+                              Session : {{ screenshot.session.title }}
+                            </div>
+                            <time class="time_info">
+                              {{ screenshot.created_at|date:"M d Y, H:i" }}
+                            </time>
+                            <a href="#" class="uk-cover link_item">
+
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+
+                  </div>
+                </div>
+              </div>
 
             </div>
         </div>
+        <div class="padding-large-bottom"></div>
     </div>
 
+  </div>
 {% endblock main %}
 
 {% block script_dependencies %}
