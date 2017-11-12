@@ -249,32 +249,34 @@ class CrossBrowserTestAPI(View):
                         f.write(contents)
 
                 except ObjectDoesNotExist as e:
-                    os.remove(full_tmp_spec)
-                    os.rmdir(tmpdir)
                     contexts.update({
                         'status': 404,
                         'message': 'Oop! ' + e.message
                     })
                     return JsonResponse(contexts)
                 except OSError:
-                    os.remove(full_tmp_spec)
-                    os.rmdir(tmpdir)
+                    if full_tmp_spec:
+                        os.remove(full_tmp_spec)
+                        os.rmdir(tmpdir)
+
                     contexts.update({
                         'status': 500,
                         'message': 'Oop! OS error'
                     })
                     return JsonResponse(contexts)
                 except IOError:
-                    os.remove(full_tmp_spec)
-                    os.rmdir(tmpdir)
+                    if full_tmp_spec:
+                        os.remove(full_tmp_spec)
+                        os.rmdir(tmpdir)
                     contexts.update({
                         'status': 500,
                         'message': 'Oop! IO error'
                     })
                     return JsonResponse(contexts)
                 except:
-                    os.remove(full_tmp_spec)
-                    os.rmdir(tmpdir)
+                    if full_tmp_spec:
+                        os.remove(full_tmp_spec)
+                        os.rmdir(tmpdir)
                     contexts.update({
                         'status': 500,
                         'message': 'Oop! something went wrong, please try again.'
@@ -292,16 +294,18 @@ class CrossBrowserTestAPI(View):
                         )
                         print('Query build done')
                     except ObjectDoesNotExist as e:
-                        os.remove(full_tmp_spec)
-                        os.rmdir(tmpdir)
+                        if full_tmp_spec:
+                            os.remove(full_tmp_spec)
+                            os.rmdir(tmpdir)
                         contexts.update({
                             'status': 404,
                             'message': 'Oop! ' + e.message
                         })
                         return JsonResponse(contexts)
                     except:
-                        os.remove(full_tmp_spec)
-                        os.rmdir(tmpdir)
+                        if full_tmp_spec:
+                            os.remove(full_tmp_spec)
+                            os.rmdir(tmpdir)
                         contexts.update({
                             'status': 500,
                             'message': 'Oop! something went wrong, please try again.'
@@ -319,8 +323,9 @@ class CrossBrowserTestAPI(View):
                         build.save()
                         print('New Build created')
                     except:
-                        os.remove(full_tmp_spec)
-                        os.rmdir(tmpdir)
+                        if full_tmp_spec:
+                            os.remove(full_tmp_spec)
+                            os.rmdir(tmpdir)
                         contexts.update({
                             'status': 500,
                             'message': 'Oop! something went wrong while create build, please try again'
@@ -487,8 +492,9 @@ class CrossBrowserTestAPI(View):
                     data.append(browser_data)
                     driver.quit()
                     if operation_failed_flag:
-                        os.remove(full_tmp_spec)
-                        os.rmdir(tmpdir)
+                        if full_tmp_spec:
+                            os.remove(full_tmp_spec)
+                            os.rmdir(tmpdir)
                         contexts.update({
                             'browser_error_count': browser_error_count
                         })
@@ -501,8 +507,9 @@ class CrossBrowserTestAPI(View):
                 'data': data,
                 'browser_error_count': browser_error_count
             })
-            os.remove(full_tmp_spec)
-            os.rmdir(tmpdir)
+            if full_tmp_spec:
+                os.remove(full_tmp_spec)
+                os.rmdir(tmpdir)
             return JsonResponse(contexts)
 
         else:
