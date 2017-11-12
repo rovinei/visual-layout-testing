@@ -2,93 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c86ddf6-4293-470f-b2b3-76bc051c4022" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/4afa0a7756694d13b83a231c646e4b9a/windows-10-ie-11-0-0/1-windows-10-ie-11.0-0.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/4afa0a7756694d13b83a231c646e4b9a/windows-10-ie-11-0-0/1-windows-10-ie-11.0-0.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/4afa0a7756694d13b83a231c646e4b9a/windows-10-ie-11-0-0/2-ie.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/4afa0a7756694d13b83a231c646e4b9a/windows-10-ie-11-0-0/2-ie.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/4afa0a7756694d13b83a231c646e4b9a/windows-10-ie-11-0-0/galen-report.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/4afa0a7756694d13b83a231c646e4b9a/windows-10-ie-11-0-0/handlebars-v2.0.0.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/4afa0a7756694d13b83a231c646e4b9a/windows-10-ie-11-0-0/icon-sprites.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/4afa0a7756694d13b83a231c646e4b9a/windows-10-ie-11-0-0/jquery-1.11.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/4afa0a7756694d13b83a231c646e4b9a/windows-10-ie-11-0-0/layout-11-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/4afa0a7756694d13b83a231c646e4b9a/windows-10-ie-11-0-0/layout-17-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/4afa0a7756694d13b83a231c646e4b9a/windows-10-ie-11-0-0/report.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/4afa0a7756694d13b83a231c646e4b9a/windows-10-ie-11-0-0/report.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/4afa0a7756694d13b83a231c646e4b9a/windows-10-ie-11-0-0/report.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/4afa0a7756694d13b83a231c646e4b9a/windows-10-ie-11-0-0/tablesorter.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/4afa0a7756694d13b83a231c646e4b9a/windows-10-ie-11-0-0/tablesorter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/1-windows-10-ie-11.0-0.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/1-windows-10-ie-11.0-0.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/2-windows-10-chrome-50.0-0.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/2-windows-10-chrome-50.0-0.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/3-ie.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/3-ie.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/galen-report.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/handlebars-v2.0.0.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/icon-sprites.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/jquery-1.11.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/layout-11-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/layout-18-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/layout-20-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/report.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/report.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/report.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/tablesorter.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/9ea7e8cec8fc495093040c8b81c94ac0/d5c83a1758ab4050bef9360f8b2cefe8/windows-10-ie-11-0-0/tablesorter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/1-windows-10-ie-11.0-0.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/1-windows-10-ie-11.0-0.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/2-windows-10-chrome-50.0-0.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/2-windows-10-chrome-50.0-0.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/3-ie.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/3-ie.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/galen-report.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/handlebars-v2.0.0.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/icon-sprites.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/jquery-1.11.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/layout-11-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/layout-17-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/layout-18-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/report.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/report.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/report.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/tablesorter.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-chrome-50-0-0/tablesorter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/1-windows-10-ie-11.0-0.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/1-windows-10-ie-11.0-0.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/2-windows-10-chrome-50.0-0.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/2-windows-10-chrome-50.0-0.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/3-ie.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/3-ie.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/galen-report.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/handlebars-v2.0.0.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/icon-sprites.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/jquery-1.11.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/layout-11-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/layout-18-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/layout-19-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/report.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/report.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/report.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/tablesorter.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/a7d7c825b71843678f58d838c9062177/d68ab3a9036647ac8b4ee597676ae5e9/windows-10-ie-11-0-0/tablesorter.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/visual-layout-testing.iml" afterPath="$PROJECT_DIR$/.idea/visual-layout-testing.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/accounts/forms/registration.py" afterPath="$PROJECT_DIR$/src/project/apps/accounts/forms/registration.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/accounts/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/src/project/apps/accounts/migrations/0001_initial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/accounts/models.py" afterPath="$PROJECT_DIR$/src/project/apps/accounts/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/automatetest/admin.py" afterPath="$PROJECT_DIR$/src/project/apps/automatetest/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/automatetest/forms.py" afterPath="$PROJECT_DIR$/src/project/apps/automatetest/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/automatetest/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/src/project/apps/automatetest/migrations/0001_initial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/automatetest/models.py" afterPath="$PROJECT_DIR$/src/project/apps/automatetest/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/automatetest/urls.py" afterPath="$PROJECT_DIR$/src/project/apps/automatetest/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/automatetest/utils.py" afterPath="$PROJECT_DIR$/src/project/apps/automatetest/utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/automatetest/views.py" afterPath="$PROJECT_DIR$/src/project/apps/automatetest/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/clarifaiApi/views.py" afterPath="$PROJECT_DIR$/src/project/apps/clarifaiApi/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/settings/settings.py" afterPath="$PROJECT_DIR$/src/project/settings/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/settings/storage_backend.py" afterPath="$PROJECT_DIR$/src/project/settings/storage_backend.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/urls.py" afterPath="$PROJECT_DIR$/src/project/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -139,7 +54,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1039">
@@ -151,11 +66,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/settings/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="159" column="72" lean-forward="false" selection-start-line="159" selection-start-column="72" selection-end-line="159" selection-end-column="72" />
+            <state relative-caret-position="-1797">
+              <caret line="32" column="19" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
               <folding>
                 <element signature="e#322#331#0" expanded="true" />
               </folding>
@@ -248,12 +173,12 @@
         <option value="$PROJECT_DIR$/src/project/apps/automatetest/report_views.py" />
         <option value="$PROJECT_DIR$/src/project/apps/automatetest/urls.py" />
         <option value="$PROJECT_DIR$/src/project/apps/automatetest/admin.py" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/project/settings/storage_backend.py" />
         <option value="$PROJECT_DIR$/src/project/apps/automatetest/utils.py" />
         <option value="$PROJECT_DIR$/src/project/apps/automatetest/models.py" />
-        <option value="$PROJECT_DIR$/src/project/settings/settings.py" />
         <option value="$PROJECT_DIR$/src/project/apps/automatetest/views.py" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/src/project/settings/settings.py" />
       </list>
     </option>
   </component>
@@ -283,17 +208,6 @@
             <path>
               <item name="visual-layout-testing" type="b2602c69:ProjectViewProjectNode" />
               <item name="visual-layout-testing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="visual-layout-testing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="visual-layout-testing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="visual-layout-testing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="visual-layout-testing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -795,14 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/env/lib/python2.7/site-packages/galenpy/thrift_client.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
@@ -865,22 +771,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/settings/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="159" column="72" lean-forward="false" selection-start-line="159" selection-start-column="72" selection-end-line="159" selection-end-column="72" />
-          <folding>
-            <element signature="e#322#331#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1039">
           <caret line="633" column="42" lean-forward="false" selection-start-line="633" selection-start-column="24" selection-end-line="633" selection-end-column="42" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/settings/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1797">
+          <caret line="32" column="19" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+          <folding>
+            <element signature="e#322#331#0" expanded="true" />
           </folding>
         </state>
       </provider>

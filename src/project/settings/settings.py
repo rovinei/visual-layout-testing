@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     'visual-browser-test.com',
     'localhost',
     '127.0.0.1',
+    '165.227.76.119'
 ]
 
 
