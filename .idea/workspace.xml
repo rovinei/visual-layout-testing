@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c86ddf6-4293-470f-b2b3-76bc051c4022" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/settings/settings.py" afterPath="$PROJECT_DIR$/src/project/settings/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/automatetest/templates/automatetest/project.html" afterPath="$PROJECT_DIR$/src/project/apps/automatetest/templates/automatetest/project.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/automatetest/urls.py" afterPath="$PROJECT_DIR$/src/project/apps/automatetest/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/wsgi.py" afterPath="$PROJECT_DIR$/src/project/wsgi.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,18 +21,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="manage.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-              <folding>
-                <element signature="e#22#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/models.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -44,12 +33,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/utils.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="180">
+              <caret line="12" column="82" lean-forward="false" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="82" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,7 +48,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1039">
+            <state relative-caret-position="-1236">
               <caret line="633" column="42" lean-forward="false" selection-start-line="633" selection-start-column="24" selection-end-line="633" selection-end-column="42" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
@@ -66,17 +57,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/settings/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1797">
@@ -88,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="storage_backend.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/settings/storage_backend.py">
+      <file leaf-file-name="project.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/templates/automatetest/project.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+            <state relative-caret-position="177">
+              <caret line="99" column="108" lean-forward="false" selection-start-line="99" selection-start-column="108" selection-end-line="99" selection-end-column="108" />
               <folding />
             </state>
           </provider>
@@ -128,7 +109,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/project/apps/automatetest/api/urls.py" />
         <option value="$PROJECT_DIR$/scripts/manage.py" />
         <option value="$PROJECT_DIR$/src/__init__.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
@@ -151,7 +131,6 @@
         <option value="$PROJECT_DIR$/src/project/apps/automatetest/templates/automatetest/components/choose_project_form.html" />
         <option value="$PROJECT_DIR$/src/project/views.py" />
         <option value="$PROJECT_DIR$/src/project/apps/automatetest/templates/automatetest/choose_create_project.html" />
-        <option value="$PROJECT_DIR$/src/project/apps/automatetest/templates/automatetest/project.html" />
         <option value="$PROJECT_DIR$/src/project/static/common/src/sass/_timeline.scss" />
         <option value="$PROJECT_DIR$/src/project/static/common/src/sass/style.scss" />
         <option value="$PROJECT_DIR$/src/project/static/common/src/sass/_form.scss" />
@@ -171,7 +150,6 @@
         <option value="$PROJECT_DIR$/src/project/apps/automatetest/migrations/0001_initial.py" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/src/project/apps/automatetest/report_views.py" />
-        <option value="$PROJECT_DIR$/src/project/apps/automatetest/urls.py" />
         <option value="$PROJECT_DIR$/src/project/apps/automatetest/admin.py" />
         <option value="$PROJECT_DIR$/src/project/settings/storage_backend.py" />
         <option value="$PROJECT_DIR$/src/project/apps/automatetest/utils.py" />
@@ -179,6 +157,9 @@
         <option value="$PROJECT_DIR$/src/project/apps/automatetest/views.py" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/project/settings/settings.py" />
+        <option value="$PROJECT_DIR$/src/project/wsgi.py" />
+        <option value="$PROJECT_DIR$/src/project/apps/automatetest/urls.py" />
+        <option value="$PROJECT_DIR$/src/project/apps/automatetest/templates/automatetest/project.html" />
       </list>
     </option>
   </component>
@@ -208,6 +189,51 @@
             <path>
               <item name="visual-layout-testing" type="b2602c69:ProjectViewProjectNode" />
               <item name="visual-layout-testing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="visual-layout-testing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="visual-layout-testing" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="visual-layout-testing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="visual-layout-testing" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="visual-layout-testing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="visual-layout-testing" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="visual-layout-testing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="visual-layout-testing" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="automatetest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="visual-layout-testing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="visual-layout-testing" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="automatetest" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="visual-layout-testing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="visual-layout-testing" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="automatetest" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="automatetest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -264,7 +290,7 @@
     <frame x="0" y="94" width="1280" height="721" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23505655" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28998384" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -333,16 +359,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/env/lib/python2.7/site-packages/galenpy/galen_webdriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-          <folding>
-            <element signature="e#1156#1167#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/apps/screenshot/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -450,14 +466,6 @@
           <folding>
             <element signature="e#0#39#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -653,16 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="60" lean-forward="false" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="497">
@@ -771,16 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1039">
-          <caret line="633" column="42" lean-forward="false" selection-start-line="633" selection-start-column="24" selection-end-line="633" selection-end-column="42" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -796,6 +784,44 @@
           <folding>
             <element signature="e#322#331#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+          <folding>
+            <element signature="e#235#244#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1236">
+          <caret line="633" column="42" lean-forward="false" selection-start-line="633" selection-start-column="24" selection-end-line="633" selection-end-column="42" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="82" lean-forward="false" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/templates/automatetest/project.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="99" column="108" lean-forward="false" selection-start-line="99" selection-start-column="108" selection-end-line="99" selection-end-column="108" />
+          <folding />
         </state>
       </provider>
     </entry>

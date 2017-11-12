@@ -97,7 +97,7 @@
                             <time class="time_info">
                               {{ report.created_at|date:"M d Y, H:i" }}
                             </time>
-                            <a href="{% url 'automate:report_detail' report_uuid=report.report_uuid %}" class="uk-display-block link_item">
+                            <a href="{% url 'automate:report_detail' path=report.report_dir|add:'report.html' %}" class="uk-display-block link_item">
                               See detail
                             </a>
                           </div>
