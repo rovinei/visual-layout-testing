@@ -153,7 +153,9 @@ STATICFILES_DIRS = [
 
 ]
 
+# Static AWS S3
 AWS_STATIC_LOCATION = 'static'
+
 STATIC_URL = 'https://{0}/{1}/'.format(AWS_S3_DOMAIN, AWS_STATIC_LOCATION)
 STATICFILES_STORAGE = 'src.project.settings.storage_backend.StaticStorage'
 

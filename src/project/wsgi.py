@@ -20,6 +20,7 @@ os.environ["DJANGO_SETTINGS_MODULE"] = "src.project.settings.settings"
 try:
     application = get_wsgi_application()
 except Exception:
+    
     # Error loading applications
     if 'mod_wsgi' in sys.modules:
         traceback.print_exc()
