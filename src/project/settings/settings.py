@@ -134,8 +134,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_URL = '/static/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'project/media/upload/')
 # MEDIA_URL = '/media/'
 
@@ -154,8 +154,8 @@ STATICFILES_DIRS = [
 ]
 
 AWS_STATIC_LOCATION = 'static'
-# STATIC_URL = 'https://{0}/{1}/'.format(AWS_S3_DOMAIN, AWS_STATIC_LOCATION)
-# STATICFILES_STORAGE = 'src.project.settings.storage_backend.StaticStorage'
+STATIC_URL = 'https://{0}/{1}/'.format(AWS_S3_DOMAIN, AWS_STATIC_LOCATION)
+STATICFILES_STORAGE = 'src.project.settings.storage_backend.StaticStorage'
 
 AWS_MEDIA_LOCATION = 'media'
 MEDIA_URL = 'https://{0}/{1}/'.format(AWS_S3_DOMAIN, AWS_MEDIA_LOCATION)

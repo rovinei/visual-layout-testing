@@ -12,6 +12,7 @@
       <w>storages</w>
       <w>tmpdir</w>
       <w>umask</w>
+      <w>wsgi</w>
     </words>
   </dictionary>
 </component>
