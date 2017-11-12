@@ -7,7 +7,8 @@ from .models import (
     TestBuild,
     TestSession,
     ScreenshotImage,
-    GalenReport
+    GalenReport,
+    SpecFile
 )
 
 from .forms import ProjectCreationForm
@@ -22,6 +23,7 @@ class ProjectAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         obj.owner = request.user
         super(ProjectAdmin, self).save_model(request, obj, form, change)
+
 
 @admin.register(TestBuild)
 class TestBuildAdmin(admin.ModelAdmin):
@@ -44,4 +46,10 @@ class GalenReportAdmin(admin.ModelAdmin):
 @admin.register(ScreenshotImage)
 class ScreenshotAdmin(admin.ModelAdmin):
     list_display = ('__str__',)
+    empty_value_display = '--None--'
+
+
+@admin.register(SpecFile)
+class SpecFileAdmin(admin.ModelAdmin):
+    list_display = ('__str__', 'project', 'spec_file')
     empty_value_display = '--None--'

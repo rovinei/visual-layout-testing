@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import uuid
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
-from django.core.exceptions import ValidationError
 from django.utils.html import format_html
 from django.conf import settings
 from .utils import handle_upload_avatar
@@ -44,6 +42,7 @@ class Employee(models.Model):
             return format_html('<img height="90px" src="{}" crossorigon="annonymous" />'.format(self.avatar.url))
         else:
             return format_html('<img height="90px" src="no-image.jpg" crossorigon="annonymous" />')
+
 
 class Customer(models.Model):
 
@@ -113,7 +112,6 @@ class Customer(models.Model):
                     settings.STATIC_URL + "accounts/img/avatar/default_avatar.png", css_class
                 )
             )
-
 
 
 @receiver(post_save, sender=User)

@@ -23,8 +23,25 @@ def generate_random_string(length, **kwargs):
 
 def upload_screenshot(instance, filename):
     file_name = generate_random_string(32, only_lower=True) + "-" + str(filename).replace(' ', '-').lower() + ".png"
-    return "{}/{}/{}".format(
+    return "{}/{}/{}/{}".format(
         'screenshot',
+        instance.project.project_uuid,
         today.strftime('%Y/%m'),
         file_name
+    )
+
+
+def handle_upload_spec(instance, filename):
+    return "{}/{}".format(
+        instance.project.project_uuid,
+        filename
+    )
+
+
+def handle_upload_report(project_uuid, build_uuid, test_name, filename):
+    return "{}/{}/{}".format(
+        project_uuid,
+        build_uuid,
+        test_name,
+        filename
     )

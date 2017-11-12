@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
-import project.apps.accounts.utils
+import src.project.apps.accounts.utils
 
 
 class Migration(migrations.Migration):
@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                 ('country', models.CharField(blank=True, max_length=255, null=True, verbose_name='Country')),
                 ('bio', models.TextField(default='', verbose_name='Biology')),
                 ('date_of_birth', models.DateField(verbose_name='Date of birth')),
-                ('avatar', models.ImageField(blank=True, null=True, upload_to=project.apps.accounts.utils.handle_upload_avatar)),
+                ('avatar', models.ImageField(blank=True, null=True, upload_to=src.project.apps.accounts.utils.handle_upload_avatar)),
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
@@ -46,7 +46,7 @@ class Migration(migrations.Migration):
                 ('address', models.CharField(blank=True, max_length=255, null=True)),
                 ('contact_number', models.CharField(blank=True, max_length=15, null=True, verbose_name='Phone number')),
                 ('fax_number', models.CharField(blank=True, max_length=15, null=True, verbose_name='Fax')),
-                ('avatar', models.ImageField(upload_to=project.apps.accounts.utils.handle_upload_avatar)),
+                ('avatar', models.ImageField(upload_to=src.project.apps.accounts.utils.handle_upload_avatar)),
                 ('bio', models.TextField(blank=True, null=True, verbose_name='Background')),
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Registered Date')),
                 ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Updated Date')),

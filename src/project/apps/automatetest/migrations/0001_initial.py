@@ -5,8 +5,8 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
-import project.apps.automatetest.utils
-import project.settings.storage_backend
+import src.project.apps.automatetest.utils
+import src.project.settings.storage_backend
 
 
 class Migration(migrations.Migration):
@@ -40,7 +40,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('screenshot_uuid', models.UUIDField(unique=True)),
-                ('src', models.ImageField(storage=project.settings.storage_backend.MediaStorage, upload_to=project.apps.automatetest.utils.upload_screenshot)),
+                ('src', models.ImageField(storage=src.project.settings.storage_backend.MediaStorage, upload_to=src.project.apps.automatetest.utils.upload_screenshot)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
             ],

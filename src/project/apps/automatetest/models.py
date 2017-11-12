@@ -5,9 +5,16 @@ import uuid
 from django.db import models
 from django.conf import settings
 from django.core.exceptions import ValidationError
-from .utils import upload_screenshot
-from project.settings.storage_backend import MediaStorage
+from .utils import upload_screenshot, handle_upload_spec
+from src.project.settings.storage_backend import MediaStorage, SpecFileStorage
 from django.contrib.auth.models import User
+
+
+TEST_STATUS_CHOICE = (
+    ('Pending', 'PENDING'),
+    ('Success', 'SUCCESS'),
+    ('Failed', 'FAILED')
+)
 
 
 class Project(models.Model):
@@ -66,6 +73,7 @@ class TestBuild(models.Model):
     name = models.CharField(max_length=255)
     build_uuid = models.CharField(max_length=64, unique=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='builds')
+    status = models.CharField(max_length=15, choices=TEST_STATUS_CHOICE, default='PENDING')
     created_at = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated_at = models.DateTimeField(auto_now_add=False, auto_now=True)
 
@@ -110,6 +118,7 @@ class TestSession(models.Model):
     session_uuid = models.CharField(max_length=64, unique=True)
     build = models.ForeignKey(TestBuild, on_delete=models.CASCADE, related_name='sessions')
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='sessions')
+    status = models.CharField(max_length=15, choices=TEST_STATUS_CHOICE, default='PENDING')
     created_at = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated_at = models.DateTimeField(auto_now_add=False, auto_now=True)
 
@@ -193,6 +202,7 @@ class ScreenshotImage(models.Model):
     """"
     Screenshot images
     """
+    title = models.CharField(max_length=500, blank=True, null=True)
     screenshot_uuid = models.CharField(max_length=64, unique=True)
     src = models.ImageField(upload_to=upload_screenshot, storage=MediaStorage)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='screenshots')
@@ -230,3 +240,17 @@ class ScreenshotImage(models.Model):
         if self.screenshot_uuid is None or self.screenshot_uuid == '':
             check_existed_uid()
         super(ScreenshotImage, self).save(*args, **kwargs)
+
+
+class SpecFile(models.Model):
+    filename = models.CharField(max_length=255)
+    spec_file = models.FileField(upload_to=handle_upload_spec, storage=SpecFileStorage())
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='specfiles')
+    created_at = models.DateTimeField(auto_now=False, auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    def __str__(self):
+        return str(self.filename)
+
+    def __unicode__(self):
+        return str(self.filename)

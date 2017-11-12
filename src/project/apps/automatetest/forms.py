@@ -2,6 +2,7 @@ from django import forms
 from .models import (Project)
 from django.utils.translation import gettext_lazy as _
 
+
 class ProjectCreationForm(forms.ModelForm):
     """
     Model creation form for project
@@ -9,8 +10,6 @@ class ProjectCreationForm(forms.ModelForm):
     class Meta:
         model = Project
         fields = ('project_name', 'description')
-
-
 
 
 class ProjectSelectionForm(forms.Form):

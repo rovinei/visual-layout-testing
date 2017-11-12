@@ -10,3 +10,14 @@ class MediaStorage(S3Boto3Storage):
 class StaticStorage(S3Boto3Storage):
     location = settings.AWS_STATIC_LOCATION
     file_overwrite = True
+
+
+class ReportStorage(S3Boto3Storage):
+    location = settings.AWS_GALEN_REPORT_LOCATION
+    file_overwrite = True
+
+
+class SpecFileStorage(S3Boto3Storage):
+    location = settings.SPEC_FILE_LOCATION
+    file_overwrite = True
+    default_acl = 'public-read'

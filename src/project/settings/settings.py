@@ -30,7 +30,6 @@ ALLOWED_HOSTS = [
     'visual-browser-test.com',
     'localhost',
     '127.0.0.1',
-    'edc89974.ngrok.io',
 ]
 
 
@@ -45,10 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'storages',
 
-    'project.apps.clarifaiApi',
-    'project.apps.screenshot',
-    'project.apps.accounts',
-    'project.apps.automatetest'
+    'src.project.apps.clarifaiApi',
+    'src.project.apps.screenshot',
+    'src.project.apps.accounts',
+    'src.project.apps.automatetest'
 ]
 
 MIDDLEWARE = [
@@ -61,7 +60,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'project.urls'
+ROOT_URLCONF = 'src.project.urls'
 
 TEMPLATES = [
     {
@@ -81,7 +80,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'project.wsgi.application'
+WSGI_APPLICATION = 'src.project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -136,7 +135,7 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media/upload/')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'project/media/upload/')
 # MEDIA_URL = '/media/'
 
 AWS_S3_USER = config('AWS_S3_USER')
@@ -155,16 +154,21 @@ STATICFILES_DIRS = [
 
 AWS_STATIC_LOCATION = 'static'
 # STATIC_URL = 'https://{0}/{1}/'.format(AWS_S3_DOMAIN, AWS_STATIC_LOCATION)
-# STATICFILES_STORAGE = 'project.settings.storage_backend.StaticStorage'
+# STATICFILES_STORAGE = 'src.project.settings.storage_backend.StaticStorage'
 
 AWS_MEDIA_LOCATION = 'media'
 MEDIA_URL = 'https://{0}/{1}/'.format(AWS_S3_DOMAIN, AWS_MEDIA_LOCATION)
-DEFAULT_FILE_STORAGE = 'project.settings.storage_backend.MediaStorage'
+DEFAULT_FILE_STORAGE = 'src.project.settings.storage_backend.MediaStorage'
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 
 BS_API_USER = config('BS_API_USER')
 BS_API_KEY = config('BS_API_KEY')
-BS_HUB_URL = 'http://{0}:{1}@hub.browserstack.com:80/wd/hub'.format(BS_API_USER, BS_API_KEY)
+BS_API_HUB_URL = 'http://{0}:{1}@hub.browserstack.com:80/wd/hub'.format(BS_API_USER, BS_API_KEY)
 
-GALEN_REPORT_DIR = os.path.join(BASE_DIR, 'project/reports')
+GALEN_REPORT_DIR = os.path.join(BASE_DIR, 'project/reports/')
+AWS_GALEN_REPORT_LOCATION = 'reports'
+REPORT_BASE_URL = 'https://{0}/{1}/'.format(AWS_S3_DOMAIN, AWS_GALEN_REPORT_LOCATION)
+
+SPEC_FILE_LOCATION = 'specfiles'
+SPEC_FILE_URL = 'https://{0}/{1}/'.format(AWS_S3_DOMAIN, SPEC_FILE_LOCATION)

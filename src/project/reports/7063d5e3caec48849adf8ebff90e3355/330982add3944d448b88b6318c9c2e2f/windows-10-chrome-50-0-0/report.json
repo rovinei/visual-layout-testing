@@ -1,0 +1,59 @@
+{
+  "tests" : [ {
+    "name" : "Windows 10 ie 11.0 0",
+    "startedAt" : 1510491847247,
+    "endedAt" : 1510491847260,
+    "failed" : true,
+    "statistic" : {
+      "passed" : 0,
+      "errors" : 1,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "1-windows-10-ie-11.0-0",
+    "failed" : true,
+    "duration" : 13
+  }, {
+    "name" : "OS X High Sierra chrome 50.0 0",
+    "startedAt" : 1510492835469,
+    "endedAt" : 1510492835470,
+    "failed" : true,
+    "statistic" : {
+      "passed" : 0,
+      "errors" : 1,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "2-os-x-high-sierra-chrome-50.0-0",
+    "failed" : true,
+    "duration" : 1
+  }, {
+    "name" : "Windows 10 chrome 50.0 0",
+    "startedAt" : 1510493924262,
+    "endedAt" : 1510493924263,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 1,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "3-windows-10-chrome-50.0-0",
+    "failed" : false,
+    "duration" : 1
+  }, {
+    "name" : "OS X Sierra safari 10.1 0",
+    "startedAt" : 1510492890403,
+    "endedAt" : 1510492890403,
+    "failed" : true,
+    "statistic" : {
+      "passed" : 0,
+      "errors" : 1,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "4-os-x-sierra-safari-10.1-0",
+    "failed" : true,
+    "duration" : 0
+  } ]
+}

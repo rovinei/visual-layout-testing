@@ -1,24 +1,24 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render, redirect
-from django.http import JsonResponse, HttpResponseRedirect, HttpResponseNotAllowed
+from django.http import JsonResponse, HttpResponseNotAllowed
 from django.views.generic.base import View
+from django.views.static import serve
+from django.contrib.staticfiles import views as static_serve
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.core import serializers
 from django.db.models import Q
-from django.views.generic import TemplateView
 from galenpy.galen_webdriver import GalenRemoteWebDriver
 from galenpy.galen_api import (Galen, generate_galen_report)
 from galenpy.galen_report import TestReport
-from galenpy.exception import (FileNotFoundError, IllegalMethodCallException )
-from .utils import generate_random_string
-from .models import (Project, TestSession, TestBuild, ScreenshotImage, GalenReport)
-from project.apps.screenshot.models import BrowserStackAvailableBrowser
-from project.apps.screenshot.forms import ScreenshotAPIForm
-import time
+from galenpy.exception import (FileNotFoundError, IllegalMethodCallException)
+from .models import (Project, TestSession, TestBuild, GalenReport, SpecFile)
+from src.project.apps.screenshot.models import BrowserStackAvailableBrowser
+from src.project.apps.screenshot.forms import ScreenshotAPIForm
 import os
-import json
+import urllib
+import tempfile
 
 
 def projects_list(request):
@@ -82,6 +82,23 @@ def get_project(request, project_uuid):
                 return redirect('/automate')
         else:
             return HttpResponseNotAllowed()
+
+
+def serve_report_static(request, report_uuid, path):
+    print('STATICFILE CALLED')
+    contexts = dict()
+    try:
+        report = GalenReport.objects.get(report_uuid=report_uuid)
+    except ObjectDoesNotExist as e:
+        contexts.update({
+            'status': 404,
+            'message': e.message
+        })
+        return redirect('/automate/')
+    report_dir = settings.GALEN_REPORT_DIR + report.report_dir
+    full_path = os.path.join(report_dir, path)
+    response = static_serve(request, full_path)
+    return response
 
 
 class CrossBrowserTestAPI(View):
@@ -179,11 +196,12 @@ class CrossBrowserTestAPI(View):
 
     def post(self, request):
         """
-        Accept get method
+        Accept post method
         """
         contexts = dict()
         if request.user.is_authenticated():
             print(request.POST)
+
             page_url = request.POST.get('page_url')
             mac_res = request.POST.get('mac_res')
             win_res = request.POST.get('win_res')
@@ -191,60 +209,107 @@ class CrossBrowserTestAPI(View):
             browsers = request.POST.getlist('browsers')
             build_uuid = request.POST.get('build_uuid', None)
             project_uuid = request.POST.get('project_uuid', None)
-            spec_file = request.FILES.get('spec_file', None)
+            form_spec_file = request.FILES.get('spec_file', None)
             data = list()
             print(browsers)
-            if spec_file is None:
+            if form_spec_file is None:
                 contexts.update({
                     'status': 400,
                     'message': 'Galen spec file must be present in request.'
                 })
                 return JsonResponse(contexts)
-            print('HEY : 1')
+
+            print('Check existent of project')
             if project_uuid is not None and project_uuid != '':
+                print('Project presented')
                 try:
                     project = Project.objects.get(
                         project_uuid=project_uuid,
                         owner__id=request.user.id
                     )
-                    print('HEY : 2')
+                    print('Query project done')
+
+                    print('Create spec file record')
+                    spec = SpecFile(
+                        filename=form_spec_file.name,
+                        project=project,
+                        spec_file=form_spec_file
+                    )
+                    spec.save()
+                    print('Saved spec file record')
+                    print('Start Checking Layout')
+                    print(spec.spec_file.url)
+
+                    tmpdir = tempfile.mkdtemp(dir=os.path.join(settings.BASE_DIR, 'tmp'))
+                    tmp_spec_filename = 'testing_specfile.spec'
+                    full_tmp_spec = os.path.join(tmpdir, tmp_spec_filename)
+                    response = urllib.urlretrieve(spec.spec_file.url)
+                    contents = open(response[0]).read()
+                    with open(full_tmp_spec, 'w') as f:
+                        f.write(contents)
+
                 except ObjectDoesNotExist as e:
+                    os.remove(full_tmp_spec)
+                    os.rmdir(tmpdir)
                     contexts.update({
                         'status': 404,
                         'message': 'Oop! ' + e.message
                     })
                     return JsonResponse(contexts)
+                except OSError:
+                    os.remove(full_tmp_spec)
+                    os.rmdir(tmpdir)
+                    contexts.update({
+                        'status': 500,
+                        'message': 'Oop! OS error'
+                    })
+                    return JsonResponse(contexts)
+                except IOError:
+                    os.remove(full_tmp_spec)
+                    os.rmdir(tmpdir)
+                    contexts.update({
+                        'status': 500,
+                        'message': 'Oop! IO error'
+                    })
+                    return JsonResponse(contexts)
                 except:
+                    os.remove(full_tmp_spec)
+                    os.rmdir(tmpdir)
                     contexts.update({
                         'status': 500,
                         'message': 'Oop! something went wrong, please try again.'
                     })
                     return JsonResponse(contexts)
-
+                print('Check existent of build')
                 if build_uuid is not None and build_uuid != '':
-                    print('HEY : 3')
+                    print('Build presented')
                     try:
+
                         build = TestBuild.objects.get(
                             build_uuid=build_uuid,
                             project__project_uuid=project_uuid,
                             project__owner__id=request.user.id
                         )
+                        print('Query build done')
                     except ObjectDoesNotExist as e:
+                        os.remove(full_tmp_spec)
+                        os.rmdir(tmpdir)
                         contexts.update({
                             'status': 404,
                             'message': 'Oop! ' + e.message
                         })
                         return JsonResponse(contexts)
                     except:
+                        os.remove(full_tmp_spec)
+                        os.rmdir(tmpdir)
                         contexts.update({
                             'status': 500,
                             'message': 'Oop! something went wrong, please try again.'
                         })
                         return JsonResponse(contexts)
                 else:
-                    print('HEY : 4')
+                    print('Count existing build of project')
                     build_count = TestBuild.objects.filter(project=project).count()
-                    print('HEY : 4.1 ' + str(build_count+1))
                     try:
                         build = TestBuild(
                             name='Build Version ' + str(build_count+1),
@@ -252,29 +317,32 @@ class CrossBrowserTestAPI(View):
                         )
                         print('Saving build')
                         build.save()
-                        print('Build created')
+                        print('New Build created')
                     except:
+                        os.remove(full_tmp_spec)
+                        os.rmdir(tmpdir)
                         contexts.update({
                             'status': 500,
                             'message': 'Oop! something went wrong while create build, please try again'
                         })
                         return JsonResponse(contexts)
             else:
+
                 contexts.update({
                     'status': 300,
                     'message': 'Project must be specified in request.'
                 })
                 return JsonResponse(contexts)
 
-            print('HEY : 4.5')
+            print('Start loop browsers')
+            browser_error_count = 0
             for browser in browsers:
-                print('HEY : 5 ' + browser)
+                print('Test Browser => ' + browser)
                 origin_browser_name = browser
                 os_platform, os_version, browser, device_or_browser_version, is_mobile = str(browser).split('|')
                 test_title = origin_browser_name.replace('|', ' ')
                 session_report_name = str(origin_browser_name).replace('|', ' ').replace(' ', '-').replace('.', '-').lower()
-                print('session Report name :' + session_report_name)
-                print('test title :' + test_title)
+                operation_failed_flag = False
                 browser_data = dict()
                 if is_mobile == '1':
                     desired_cap = {
@@ -294,40 +362,46 @@ class CrossBrowserTestAPI(View):
                         'acceptSslCerts': True,
                         'browserstack.video': False
                     }
-                driver = GalenRemoteWebDriver(remote_url=settings.BS_HUB_URL, desired_capabilities=desired_cap)
+                print('Starting Galen remote driver')
+                driver = GalenRemoteWebDriver(remote_url=settings.BS_API_HUB_URL, desired_capabilities=desired_cap)
                 session_uuid = driver.session_id
+                print('Go to page => ' + page_url)
                 driver.get(page_url)
                 driver.maximize_window()
-                # random_str = generate_random_string(64)
-                # img_path = os.path.join(settings.MEDIA_ROOT, "projects/punited/"+random_str+".png")
-                # time.sleep(3)
 
                 try:
-                    print('HEY : Start galen')
-                    check_layout = Galen().check_layout(driver, os.path.join(settings.BASE_DIR, 'project/a.spec'), [], [])
-                    print('HEY : Start galen check_layout')
+                    print("SPEC FILE PATH => " + full_tmp_spec)
+                    check_layout = Galen().check_layout(driver, full_tmp_spec, [], [])
+                    print('Finished check layout')
                     TestReport(test_title).add_layout_report_node(test_title, check_layout).finalize()
-                    print('HEY : Start galen finalize reports')
-                    report_path = '{}/{}/{}'.format(project_uuid, build.build_uuid, session_report_name)
+                    print('Finished finalize report')
+
+                    print('Generating report path')
+                    report_path = '{}/{}/{}/'.format(project_uuid, build.build_uuid, session_report_name)
                     full_report_path = os.path.join(
                         settings.GALEN_REPORT_DIR,
                         report_path
                     )
-                    print('HEY : Generate report path')
+
+                    print('Starting generate galen report')
                     generate_galen_report(full_report_path)
-                    print('HEY : Start galen generate report')
-                    print(build.build_uuid)
-                    print(test_title)
-                    print(session_uuid)
+                    print('Galen report generated')
+
                     session = TestSession(
                         title=test_title,
                         build=build,
                         project=project,
-                        session_uuid=session_uuid
+                        session_uuid=session_uuid,
+                        status='SUCCESS'
                     )
                     print('Saving session')
                     session.save()
                     print('session saved')
+
+                    print('Updating build status')
+                    build.status = 'SUCCESS'
+                    build.save()
+                    print('Updated build status')
 
                     print('Create report record')
                     g_report = GalenReport(
@@ -340,33 +414,63 @@ class CrossBrowserTestAPI(View):
                     print('Saving report record')
                     g_report.save()
                     print('Report record saved')
-                    print('HEY : Start serialize report')
+
+                    print('Starting serialize report')
                     serialized_report = serializers.serialize(
                         'json',
-                        [g_report],
+                        [g_report, ],
                         fields=('report_uuid', 'title', 'report_dir', 'project', 'build', 'session')
                     )
-                    print('HEY : Start serialize session')
+
+                    print('Starting serialize session')
                     serialized_session = serializers.serialize(
                         'json',
-                        [session,],
+                        [session, ],
                         fields=('title', 'build', 'project', 'session_uuid'))
-                    print('HEY : Start serialize session')
+
+                    print('Create browser response data')
                     browser_data.update({
                         'status': 200,
                         'title': test_title,
+                        # 'project': {
+                        #     'project_uuid': project.project_uuid,
+                        #     'name': project.project_name
+                        # },
+                        # 'build': {
+                        #     'uuid': build.build_uuid,
+                        #     'name': build.name
+                        # },
                         'session': serialized_session,
-                        'build': {
-                            'uuid': build.build_uuid,
-                            'name': build.name
-                        },
                         'report': serialized_report,
                         'screenshots': [
 
                         ]
                     })
-                    print('HEY : finished task')
-
+                    print('Finished Browser Test')
+                except FileNotFoundError:
+                    contexts.update({
+                        'status': 500,
+                        'message': 'Oop! spec file import error, file not found!'
+                    })
+                    browser_data.update({
+                        'status': 500,
+                        'title': test_title,
+                        'message': test_title + ' browser test is failed, due to spec file not found'
+                    })
+                    browser_error_count += 1
+                    operation_failed_flag = True
+                except IllegalMethodCallException as e:
+                    contexts.update({
+                        'status': 500,
+                        'message': 'Oop! ' + e.message
+                    })
+                    browser_data.update({
+                        'status': 500,
+                        'title': test_title,
+                        'message': test_title + ' browser test is failed, due to illegal method call.'
+                    })
+                    browser_error_count += 1
+                    operation_failed_flag = True
                 except:
                     contexts.update({
                         'status': 500,
@@ -377,19 +481,28 @@ class CrossBrowserTestAPI(View):
                         'title': test_title,
                         'message': test_title + ' browser test is failed.'
                     })
-                    pass
+                    browser_error_count += 1
                 finally:
                     print('HEY : Quit Browser')
                     data.append(browser_data)
                     driver.quit()
+                    if operation_failed_flag:
+                        os.remove(full_tmp_spec)
+                        os.rmdir(tmpdir)
+                        contexts.update({
+                            'browser_error_count': browser_error_count
+                        })
+                        return JsonResponse(contexts)
                     pass
 
             contexts.update({
                 'status': 200,
                 'message': 'Automate Cross browser testing finished.',
-                'data': data
+                'data': data,
+                'browser_error_count': browser_error_count
             })
-
+            os.remove(full_tmp_spec)
+            os.rmdir(tmpdir)
             return JsonResponse(contexts)
 
         else:
@@ -401,6 +514,9 @@ class CrossBrowserTestAPI(View):
 
 
 class ScreenshotJobAPI(View):
+    """
+    Automate screenshot API with BrowserStack
+    """
     def get(self, request, project_uuid):
         contexts = dict()
         if request.user.is_authenticated():
@@ -490,38 +606,11 @@ class ScreenshotJobAPI(View):
             return redirect('/admin/')
 
 
-class ReportView(View):
-    """
-    Report detail of testing
-    """
-    def get(self, request, report_uuid):
-        contexts = dict()
-        if request.user.is_authenticated():
-            try:
-                report = GalenReport.objects.get(report_uuid=report_uuid)
-                contexts.update({
-                    'report': report
-                })
-            except ObjectDoesNotExist as e:
-                contexts.update({
-                    'status': 404,
-                    'message': e.message
-                })
-                return redirect('/automate/')
-
-            if 'project.uuid' in request.session and 'project.name' in request.session and 'project.owner' in request.session:
-                contexts.update({
-                    'current_project': {
-                        'uuid': request.session['project.uuid'],
-                        'name': request.session['project.name'],
-                        'owner': request.session['project.owner'],
-                    }
-                })
-
-            return render(request, 'automatetest/report_detail.html', contexts)
-
-        else:
-            return redirect('/admin/login/?next=/automate/')
+def get_detail_report(request, path):
+    if request.user.is_authenticated():
+        return serve(request, path, settings.GALEN_REPORT_DIR)
+    else:
+        return redirect('/admin/login/?next=/automate/')
 
 
 class ProjectAjaxView(View):
@@ -544,7 +633,7 @@ class ProjectAjaxView(View):
                         project = Project.objects.get(project_uuid=project_uuid)
                         serialized_project = serializers.serialize(
                             'json',
-                            [project,],
+                            [project, ],
                             fields=('project_uuid', 'project_name', 'description'))
                         context.update({
                             'status': 200,

@@ -1,0 +1,42 @@
+{
+  "testId" : "4-os-x-sierra-safari-10.1-0",
+  "name" : "OS X Sierra safari 10.1 0",
+  "report" : {
+    "nodes" : [ {
+      "name" : "OS X Sierra safari 10.1 0",
+      "status" : "error",
+      "time" : 1510492890403,
+      "includedTags" : [ ],
+      "excludedTags" : [ ],
+      "sections" : [ {
+        "name" : "",
+        "objects" : [ {
+          "name" : "== test ==",
+          "specs" : [ ]
+        }, {
+          "name" : "top",
+          "specs" : [ {
+            "status" : "error",
+            "place" : {
+              "filePath" : "/Users/rana/Desktop/visual-layout-testing/src/tmp/tmprUatbF/testing_specfile.spec",
+              "lineNumber" : 9
+            },
+            "name" : "near: down 75 px top , -630 px left",
+            "errors" : [ "\"top\" is 217px top instead of 75px, is -780px left instead of -630px" ],
+            "highlight" : [ "top", "down" ]
+          } ]
+        } ]
+      } ],
+      "objects" : {
+        "top" : {
+          "area" : [ 524, 450, 256, 154 ]
+        },
+        "down" : {
+          "area" : [ 0, 821, 800, 415 ]
+        }
+      },
+      "screenshot" : "layout-3-screenshot.png",
+      "type" : "layout"
+    } ]
+  }
+}
