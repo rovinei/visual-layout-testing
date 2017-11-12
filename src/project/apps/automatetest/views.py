@@ -255,7 +255,7 @@ class CrossBrowserTestAPI(View):
                     })
                     return JsonResponse(contexts)
                 except OSError:
-                    if full_tmp_spec:
+                    if 'full_tmp_spec' in locals():
                         os.remove(full_tmp_spec)
                         os.rmdir(tmpdir)
 
@@ -265,7 +265,7 @@ class CrossBrowserTestAPI(View):
                     })
                     return JsonResponse(contexts)
                 except IOError:
-                    if full_tmp_spec:
+                    if 'full_tmp_spec' in locals():
                         os.remove(full_tmp_spec)
                         os.rmdir(tmpdir)
                     contexts.update({
@@ -274,7 +274,7 @@ class CrossBrowserTestAPI(View):
                     })
                     return JsonResponse(contexts)
                 except:
-                    if full_tmp_spec:
+                    if 'full_tmp_spec' in locals():
                         os.remove(full_tmp_spec)
                         os.rmdir(tmpdir)
                     contexts.update({
@@ -303,7 +303,7 @@ class CrossBrowserTestAPI(View):
                         })
                         return JsonResponse(contexts)
                     except:
-                        if full_tmp_spec:
+                        if 'full_tmp_spec' in locals():
                             os.remove(full_tmp_spec)
                             os.rmdir(tmpdir)
                         contexts.update({
@@ -323,7 +323,7 @@ class CrossBrowserTestAPI(View):
                         build.save()
                         print('New Build created')
                     except:
-                        if full_tmp_spec:
+                        if 'full_tmp_spec' in locals():
                             os.remove(full_tmp_spec)
                             os.rmdir(tmpdir)
                         contexts.update({
@@ -492,7 +492,7 @@ class CrossBrowserTestAPI(View):
                     data.append(browser_data)
                     driver.quit()
                     if operation_failed_flag:
-                        if full_tmp_spec:
+                        if 'full_tmp_spec' in locals():
                             os.remove(full_tmp_spec)
                             os.rmdir(tmpdir)
                         contexts.update({
@@ -507,7 +507,7 @@ class CrossBrowserTestAPI(View):
                 'data': data,
                 'browser_error_count': browser_error_count
             })
-            if full_tmp_spec:
+            if 'full_tmp_spec' in locals():
                 os.remove(full_tmp_spec)
                 os.rmdir(tmpdir)
             return JsonResponse(contexts)

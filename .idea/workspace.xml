@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c86ddf6-4293-470f-b2b3-76bc051c4022" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/1-windows-10-ie-11.0-0.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/1-windows-10-ie-11.0-0.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/2-os-x-high-sierra-chrome-50.0-0.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/2-os-x-high-sierra-chrome-50.0-0.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/3-windows-10-chrome-50.0-0.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/3-windows-10-chrome-50.0-0.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/4-os-x-sierra-safari-10.1-0.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/4-os-x-sierra-safari-10.1-0.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/galen-report.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/handlebars-v2.0.0.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/icon-sprites.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/jquery-1.11.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/layout-1-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/layout-2-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/layout-3-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/layout-5-screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/report.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/report.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/report.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/tablesorter.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project/reports/7063d5e3caec48849adf8ebff90e3355/330982add3944d448b88b6318c9c2e2f/windows-10-chrome-50-0-0/tablesorter.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/automatetest/views.py" afterPath="$PROJECT_DIR$/src/project/apps/automatetest/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/wsgi.py" afterPath="$PROJECT_DIR$/src/project/wsgi.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -76,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="511" column="32" lean-forward="false" selection-start-line="511" selection-start-column="32" selection-end-line="511" selection-end-column="32" />
+            <state relative-caret-position="299">
+              <caret line="509" column="43" lean-forward="false" selection-start-line="509" selection-start-column="43" selection-end-line="509" selection-end-column="43" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -110,7 +87,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wsgi.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wsgi.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/wsgi.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
@@ -818,22 +795,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="511" column="32" lean-forward="false" selection-start-line="511" selection-start-column="32" selection-end-line="511" selection-end-column="32" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="e#235#244#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="509" column="43" lean-forward="false" selection-start-line="509" selection-start-column="43" selection-end-line="509" selection-end-column="43" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
