@@ -367,15 +367,50 @@ if (!PUNITED.automateAPI) PUNITED.automateAPI = {};
                     enctype: "multipart/form-data",
                     success: function(resp){
                         $('#loading-spinner').removeClass('active');
-                        console.log("Cross Browser Test Done");
                         console.log(JSON.parse(JSON.stringify(resp)));
-                        data = JSON.parse(JSON.stringify(resp));
-                        if (data.status == 200) {
+                        var response = JSON.parse(JSON.stringify(resp));
+                        var browsers = response.data;
+                        var reports_html = "<h3 class='md-title'>Summarized Report</h3>";
+
+                        if (response.status == 200) {
+                            for(var i=0; i<browsers.length; i++){
+                                var browser = browsers[i],
+                                    status = browser.status;
+                                if(status == 200){
+                                    var report = JSON.parse(browser.report),
+                                        report_url = "/automate/report/" + report[0].fields.report_dir + "report.html";
+
+                                    reports_html += "<div class='uk-margin uk-width-1-1'>" +
+                                                        "<div class='alert-report-title'>" +
+                                                            "<h4 class='uk-title'>"+ report[0].fields.title +"</h4>" +
+                                                        "</div>" +
+                                                        "<div class='alert-report-url'>" +
+                                                            "<a href='"+ report_url +"'> See detail </a>" +
+                                                        "</div>" +
+                                                    "</div>";
+
+                                }else{
+                                    reports_html += "<div class='uk-margin uk-width-1-1'>" +
+                                                        "<div class='alert-report-title'>" +
+                                                            "<h4 class='uk-title uk-text-danger'>" +
+                                                                browser.title +
+                                                            "</h4>" +
+                                                        "</div>" +
+                                                        "<div class='alert-report-msg'>" +
+                                                            browser.message +
+                                                        "</div>" +
+                                                     "</div>";
+                                }
+
+                            }
+
                             swal({
                                 title: 'Done',
-                                text: data.message,
-                                type: 'success'
+                                html: reports_html,
+                                type: 'success',
+                                allowOutsideClick: false,
                             });
+
                         }else{
                             swal({
                                 title: 'Failed',

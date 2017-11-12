@@ -491,6 +491,7 @@ class CrossBrowserTestAPI(View):
                     print('HEY : Quit Browser')
                     data.append(browser_data)
                     driver.quit()
+
                     if operation_failed_flag:
                         if 'full_tmp_spec' in locals():
                             os.remove(full_tmp_spec)
