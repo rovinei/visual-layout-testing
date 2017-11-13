@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c86ddf6-4293-470f-b2b3-76bc051c4022" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/rana.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/rana.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/automatetest/static/automatetest/custom/js/automate.api.js" afterPath="$PROJECT_DIR$/src/project/apps/automatetest/static/automatetest/custom/js/automate.api.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/apps/automatetest/views.py" afterPath="$PROJECT_DIR$/src/project/apps/automatetest/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-678">
-              <caret line="387" column="35" lean-forward="false" selection-start-line="387" selection-start-column="35" selection-end-line="387" selection-end-column="35" />
+            <state relative-caret-position="251">
+              <caret line="494" column="42" lean-forward="false" selection-start-line="494" selection-start-column="42" selection-end-line="494" selection-end-column="42" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -68,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/settings/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="158" column="74" lean-forward="true" selection-start-line="158" selection-start-column="74" selection-end-line="159" selection-end-column="74" />
+            <state relative-caret-position="373">
+              <caret line="158" column="74" lean-forward="false" selection-start-line="158" selection-start-column="74" selection-end-line="159" selection-end-column="74" />
               <folding>
                 <element signature="e#322#331#0" expanded="true" />
               </folding>
@@ -210,14 +207,14 @@
         <option value="$PROJECT_DIR$/src/project/apps/automatetest/templates/automatetest/project.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/project/wsgi.py" />
-        <option value="$PROJECT_DIR$/src/project/apps/automatetest/views.py" />
         <option value="$PROJECT_DIR$/src/project/apps/automatetest/static/automatetest/custom/js/automate.api.js" />
         <option value="$PROJECT_DIR$/src/project/settings/settings.py" />
+        <option value="$PROJECT_DIR$/src/project/apps/automatetest/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="40" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="721" />
   </component>
@@ -367,9 +364,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="721" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="721" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18174475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18174475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -868,16 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-678">
-          <caret line="387" column="35" lean-forward="false" selection-start-line="387" selection-start-column="35" selection-end-line="387" selection-end-column="35" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/static/automatetest/custom/js/automate.api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -888,10 +876,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/settings/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="158" column="74" lean-forward="true" selection-start-line="158" selection-start-column="74" selection-end-line="159" selection-end-column="74" />
+        <state relative-caret-position="373">
+          <caret line="158" column="74" lean-forward="false" selection-start-line="158" selection-start-column="74" selection-end-line="159" selection-end-column="74" />
           <folding>
             <element signature="e#322#331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/apps/automatetest/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="494" column="42" lean-forward="false" selection-start-line="494" selection-start-column="42" selection-end-line="494" selection-end-column="42" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
           </folding>
         </state>
       </provider>

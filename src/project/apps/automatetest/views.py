@@ -492,6 +492,9 @@ class CrossBrowserTestAPI(View):
                     data.append(browser_data)
                     driver.quit()
 
+                    # Close Galen jar file
+                    driver.thrift_client.shut_service()
+
                     if operation_failed_flag:
                         if 'full_tmp_spec' in locals():
                             os.remove(full_tmp_spec)
