@@ -1,0 +1,41 @@
+{
+  "testId" : "15-windows-10-chrome-50.0-0",
+  "name" : "Windows 10 chrome 50.0 0",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Windows 10 chrome 50.0 0",
+      "status" : "info",
+      "time" : 1510513589827,
+      "includedTags" : [ ],
+      "excludedTags" : [ ],
+      "sections" : [ {
+        "name" : "",
+        "objects" : [ {
+          "name" : "== test ==",
+          "specs" : [ ]
+        }, {
+          "name" : "top",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "/var/www/pu-ai-test.com/src/tmp/tmpr2mHFm/testing_specfile.spec",
+              "lineNumber" : 9
+            },
+            "name" : "near: down 75 px top , -630 px left",
+            "highlight" : [ "top", "down" ]
+          } ]
+        } ]
+      } ],
+      "objects" : {
+        "top" : {
+          "area" : [ 707, 395, 276, 165 ]
+        },
+        "down" : {
+          "area" : [ 353, 635, 630, 460 ]
+        }
+      },
+      "screenshot" : "layout-10-screenshot.png",
+      "type" : "layout"
+    } ]
+  }
+}

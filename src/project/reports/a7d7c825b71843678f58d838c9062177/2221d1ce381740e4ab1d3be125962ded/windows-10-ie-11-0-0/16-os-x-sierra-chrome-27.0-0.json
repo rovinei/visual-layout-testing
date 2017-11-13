@@ -1,0 +1,42 @@
+{
+  "testId" : "16-os-x-sierra-chrome-27.0-0",
+  "name" : "OS X Sierra chrome 27.0 0",
+  "report" : {
+    "nodes" : [ {
+      "name" : "OS X Sierra chrome 27.0 0",
+      "status" : "error",
+      "time" : 1510533339331,
+      "includedTags" : [ ],
+      "excludedTags" : [ ],
+      "sections" : [ {
+        "name" : "",
+        "objects" : [ {
+          "name" : "==Test Layout==",
+          "specs" : [ ]
+        }, {
+          "name" : "top",
+          "specs" : [ {
+            "status" : "error",
+            "place" : {
+              "filePath" : "/var/www/pu-ai-test.com/src/tmp/tmpz5Ui0j/testing_specfile.spec",
+              "lineNumber" : 8
+            },
+            "name" : "near: down down 75 px top , -630 px left",
+            "errors" : [ "\"top\" is 271px top instead of 75px, is -922px left instead of -630px" ],
+            "highlight" : [ "top", "down" ]
+          } ]
+        } ]
+      } ],
+      "objects" : {
+        "top" : {
+          "area" : [ 646, 533, 276, 165 ]
+        },
+        "down" : {
+          "area" : [ 0, 969, 980, 368 ]
+        }
+      },
+      "screenshot" : "layout-28-screenshot.png",
+      "type" : "layout"
+    } ]
+  }
+}

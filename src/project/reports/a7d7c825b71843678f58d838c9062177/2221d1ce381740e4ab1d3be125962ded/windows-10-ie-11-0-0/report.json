@@ -1,0 +1,241 @@
+{
+  "tests" : [ {
+    "name" : "Windows 10 ie 11.0 0",
+    "startedAt" : 1510534357498,
+    "endedAt" : 1510534357500,
+    "failed" : true,
+    "statistic" : {
+      "passed" : 0,
+      "errors" : 1,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "1-windows-10-ie-11.0-0",
+    "failed" : true,
+    "duration" : 2
+  }, {
+    "name" : "OS X Sierra chrome 40.0 0",
+    "startedAt" : 1510513459271,
+    "endedAt" : 1510513459280,
+    "failed" : true,
+    "statistic" : {
+      "passed" : 0,
+      "errors" : 1,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "2-os-x-sierra-chrome-40.0-0",
+    "failed" : true,
+    "duration" : 9
+  }, {
+    "name" : "OS X Sierra firefox 40.0 0",
+    "startedAt" : 1510513500809,
+    "endedAt" : 1510513500811,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 1,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "3-os-x-sierra-firefox-40.0-0",
+    "failed" : false,
+    "duration" : 2
+  }, {
+    "name" : "OS X High Sierra firefox 45.0 0",
+    "startedAt" : 1510518746932,
+    "endedAt" : 1510518746935,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 2,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 2
+    },
+    "testId" : "4-os-x-high-sierra-firefox-45.0-0",
+    "failed" : false,
+    "duration" : 3
+  }, {
+    "name" : "OS X High Sierra firefox 40.0 0",
+    "startedAt" : 1510518370211,
+    "endedAt" : 1510518370233,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 4,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 4
+    },
+    "testId" : "5-os-x-high-sierra-firefox-40.0-0",
+    "failed" : false,
+    "duration" : 22
+  }, {
+    "name" : "OS X Sierra safari 10.1 0",
+    "startedAt" : 1510518818149,
+    "endedAt" : 1510518818150,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 2,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 2
+    },
+    "testId" : "6-os-x-sierra-safari-10.1-0",
+    "failed" : false,
+    "duration" : 1
+  }, {
+    "name" : "OS X Sierra chrome 50.0 0",
+    "startedAt" : 1510518779732,
+    "endedAt" : 1510518779735,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 2,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 2
+    },
+    "testId" : "7-os-x-sierra-chrome-50.0-0",
+    "failed" : false,
+    "duration" : 3
+  }, {
+    "name" : "Windows 10 chrome 45.0 0",
+    "startedAt" : 1510514255820,
+    "endedAt" : 1510514255824,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 1,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "8-windows-10-chrome-45.0-0",
+    "failed" : false,
+    "duration" : 4
+  }, {
+    "name" : "Windows 10 firefox 45.0 0",
+    "startedAt" : 1510513650573,
+    "endedAt" : 1510513650594,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 1,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "9-windows-10-firefox-45.0-0",
+    "failed" : false,
+    "duration" : 21
+  }, {
+    "name" : "Windows 10 chrome 37.0 0",
+    "startedAt" : 1510533379500,
+    "endedAt" : 1510533379501,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 1,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "10-windows-10-chrome-37.0-0",
+    "failed" : false,
+    "duration" : 1
+  }, {
+    "name" : "OS X High Sierra chrome 40.0 0",
+    "startedAt" : 1510518335364,
+    "endedAt" : 1510518335370,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 4,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 4
+    },
+    "testId" : "11-os-x-high-sierra-chrome-40.0-0",
+    "failed" : false,
+    "duration" : 6
+  }, {
+    "name" : "Windows 10 firefox 32.0 0",
+    "startedAt" : 1510533407395,
+    "endedAt" : 1510533407426,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 1,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "12-windows-10-firefox-32.0-0",
+    "failed" : false,
+    "duration" : 31
+  }, {
+    "name" : "Windows 10 edge 14.0 0",
+    "startedAt" : 1510512667209,
+    "endedAt" : 1510512667214,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 1,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "13-windows-10-edge-14.0-0",
+    "failed" : false,
+    "duration" : 5
+  }, {
+    "name" : "OS X High Sierra chrome 45.0 0",
+    "startedAt" : 1510518712717,
+    "endedAt" : 1510518712720,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 2,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 2
+    },
+    "testId" : "14-os-x-high-sierra-chrome-45.0-0",
+    "failed" : false,
+    "duration" : 3
+  }, {
+    "name" : "Windows 10 chrome 50.0 0",
+    "startedAt" : 1510513589816,
+    "endedAt" : 1510513589827,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 1,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "15-windows-10-chrome-50.0-0",
+    "failed" : false,
+    "duration" : 11
+  }, {
+    "name" : "OS X Sierra chrome 27.0 0",
+    "startedAt" : 1510533339307,
+    "endedAt" : 1510533339331,
+    "failed" : true,
+    "statistic" : {
+      "passed" : 0,
+      "errors" : 1,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "16-os-x-sierra-chrome-27.0-0",
+    "failed" : true,
+    "duration" : 24
+  }, {
+    "name" : "Windows 10 edge 16.0 0",
+    "startedAt" : 1510513614329,
+    "endedAt" : 1510513614332,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 1,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "17-windows-10-edge-16.0-0",
+    "failed" : false,
+    "duration" : 3
+  } ]
+}

@@ -1,0 +1,17 @@
+{
+  "tests" : [ {
+    "name" : "Windows 10 chrome 40.0 0",
+    "startedAt" : 1510563139729,
+    "endedAt" : 1510563139761,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 1,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "1-windows-10-chrome-40.0-0",
+    "failed" : false,
+    "duration" : 32
+  } ]
+}

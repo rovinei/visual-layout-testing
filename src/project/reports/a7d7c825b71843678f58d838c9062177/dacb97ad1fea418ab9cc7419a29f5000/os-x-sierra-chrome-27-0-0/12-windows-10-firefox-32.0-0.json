@@ -1,0 +1,41 @@
+{
+  "testId" : "12-windows-10-firefox-32.0-0",
+  "name" : "Windows 10 firefox 32.0 0",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Windows 10 firefox 32.0 0",
+      "status" : "info",
+      "time" : 1510533407426,
+      "includedTags" : [ ],
+      "excludedTags" : [ ],
+      "sections" : [ {
+        "name" : "",
+        "objects" : [ {
+          "name" : "==Test Layout==",
+          "specs" : [ ]
+        }, {
+          "name" : "top",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "/var/www/pu-ai-test.com/src/tmp/tmpz5Ui0j/testing_specfile.spec",
+              "lineNumber" : 8
+            },
+            "name" : "near: down down 75 px top , -630 px left",
+            "highlight" : [ "top", "down" ]
+          } ]
+        } ]
+      } ],
+      "objects" : {
+        "top" : {
+          "area" : [ 708, 395, 276, 165 ]
+        },
+        "down" : {
+          "area" : [ 354, 635, 630, 467 ]
+        }
+      },
+      "screenshot" : "layout-30-screenshot.png",
+      "type" : "layout"
+    } ]
+  }
+}

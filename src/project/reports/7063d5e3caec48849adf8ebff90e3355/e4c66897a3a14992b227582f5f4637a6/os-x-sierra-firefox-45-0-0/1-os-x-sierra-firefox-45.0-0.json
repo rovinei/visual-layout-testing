@@ -1,0 +1,41 @@
+{
+  "testId" : "1-os-x-sierra-firefox-45.0-0",
+  "name" : "OS X Sierra firefox 45.0 0",
+  "report" : {
+    "nodes" : [ {
+      "name" : "OS X Sierra firefox 45.0 0",
+      "status" : "info",
+      "time" : 1510563095144,
+      "includedTags" : [ ],
+      "excludedTags" : [ ],
+      "sections" : [ {
+        "name" : "",
+        "objects" : [ {
+          "name" : "==Test Layout==",
+          "specs" : [ ]
+        }, {
+          "name" : "top",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "/var/www/pu-ai-test.com/src/tmp/tmprF96tS/testing_specfile.spec",
+              "lineNumber" : 8
+            },
+            "name" : "near: down down 75 px top , -630 px left",
+            "highlight" : [ "top", "down" ]
+          } ]
+        } ]
+      } ],
+      "objects" : {
+        "top" : {
+          "area" : [ 716, 395, 276, 165 ]
+        },
+        "down" : {
+          "area" : [ 362, 635, 630, 467 ]
+        }
+      },
+      "screenshot" : "layout-1-screenshot.png",
+      "type" : "layout"
+    } ]
+  }
+}

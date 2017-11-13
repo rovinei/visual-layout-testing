@@ -1,0 +1,55 @@
+{
+  "testId" : "4-os-x-high-sierra-firefox-45.0-0",
+  "name" : "OS X High Sierra firefox 45.0 0",
+  "report" : {
+    "nodes" : [ {
+      "name" : "OS X High Sierra firefox 45.0 0",
+      "status" : "info",
+      "time" : 1510518746935,
+      "includedTags" : [ ],
+      "excludedTags" : [ ],
+      "sections" : [ {
+        "name" : "",
+        "objects" : [ {
+          "name" : "==Test Layout==",
+          "specs" : [ ]
+        }, {
+          "name" : "icon_newrelease",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "/var/www/pu-ai-test.com/src/tmp/tmpVLwC8l/testing_specfile.spec",
+              "lineNumber" : 9
+            },
+            "name" : "near: icon_customer 0 px top",
+            "highlight" : [ "icon_newrelease", "icon_customer" ]
+          } ]
+        }, {
+          "name" : "icon_customer",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "/var/www/pu-ai-test.com/src/tmp/tmpVLwC8l/testing_specfile.spec",
+              "lineNumber" : 12
+            },
+            "name" : "near: icon_media 0 px top",
+            "highlight" : [ "icon_customer", "icon_media" ]
+          } ]
+        } ]
+      } ],
+      "objects" : {
+        "icon_customer" : {
+          "area" : [ 178, 614, 479, 43 ]
+        },
+        "icon_media" : {
+          "area" : [ 178, 657, 479, 43 ]
+        },
+        "icon_newrelease" : {
+          "area" : [ 178, 572, 479, 42 ]
+        }
+      },
+      "screenshot" : "layout-24-screenshot.png",
+      "type" : "layout"
+    } ]
+  }
+}

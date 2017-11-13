@@ -1,0 +1,77 @@
+{
+  "testId" : "11-os-x-high-sierra-chrome-40.0-0",
+  "name" : "OS X High Sierra chrome 40.0 0",
+  "report" : {
+    "nodes" : [ {
+      "name" : "OS X High Sierra chrome 40.0 0",
+      "status" : "info",
+      "time" : 1510518335370,
+      "includedTags" : [ ],
+      "excludedTags" : [ ],
+      "sections" : [ {
+        "name" : "",
+        "objects" : [ {
+          "name" : "==Test Layout==",
+          "specs" : [ ]
+        }, {
+          "name" : "home_case-1",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "/var/www/pu-ai-test.com/src/tmp/tmpk1w0Z3/testing_specfile.spec",
+              "lineNumber" : 7
+            },
+            "name" : "near: home_case-2 -648 px right",
+            "highlight" : [ "home_case-1", "home_case-2" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "/var/www/pu-ai-test.com/src/tmp/tmpk1w0Z3/testing_specfile.spec",
+              "lineNumber" : 10
+            },
+            "name" : "near: home_case-3 20 px top",
+            "highlight" : [ "home_case-1", "home_case-3" ]
+          } ]
+        }, {
+          "name" : "home_case-2",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "/var/www/pu-ai-test.com/src/tmp/tmpk1w0Z3/testing_specfile.spec",
+              "lineNumber" : 13
+            },
+            "name" : "near: home_case-4 20 px top",
+            "highlight" : [ "home_case-2", "home_case-4" ]
+          } ]
+        }, {
+          "name" : "home_case-3",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "/var/www/pu-ai-test.com/src/tmp/tmpk1w0Z3/testing_specfile.spec",
+              "lineNumber" : 16
+            },
+            "name" : "near: home_case-4 -648 px right",
+            "highlight" : [ "home_case-3", "home_case-4" ]
+          } ]
+        } ]
+      } ],
+      "objects" : {
+        "home_case-4" : {
+          "area" : [ 374, 1316, 314, 74 ]
+        },
+        "home_case-3" : {
+          "area" : [ 40, 1316, 314, 74 ]
+        },
+        "home_case-2" : {
+          "area" : [ 374, 1222, 314, 74 ]
+        },
+        "home_case-1" : {
+          "area" : [ 40, 1222, 314, 74 ]
+        }
+      },
+      "screenshot" : "layout-19-screenshot.png",
+      "type" : "layout"
+    } ]
+  }
+}

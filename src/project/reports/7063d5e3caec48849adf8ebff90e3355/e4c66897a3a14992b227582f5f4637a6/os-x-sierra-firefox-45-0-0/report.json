@@ -1,0 +1,17 @@
+{
+  "tests" : [ {
+    "name" : "OS X Sierra firefox 45.0 0",
+    "startedAt" : 1510563095121,
+    "endedAt" : 1510563095138,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 1,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "1-os-x-sierra-firefox-45.0-0",
+    "failed" : false,
+    "duration" : 17
+  } ]
+}
