@@ -163,3 +163,5 @@ typings/
 .DS_Store
 
 .idea/*
+
+reports/*
