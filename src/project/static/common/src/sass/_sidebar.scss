@@ -1,0 +1,62 @@
+.sidebar{
+    position: relative;
+    width: 280px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    height: 100vh;
+    overflow: scroll;
+
+    .inner{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: transparent;
+    }
+
+    .sidebar-heading{
+        position: relative;
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 15px;
+
+        .title{
+            color: #4e4e4e;
+            font-size: 1.2em;
+            margin: 0;
+        }
+    }
+
+    .sidebar_nav{
+        padding: 0;
+        margin: 0;
+        position: relative;
+        width: 100%;
+        @include clearfix();
+
+        .menu-item{
+            float: left;
+            width: 100%;
+            display: block;
+            position: relative;
+        }
+
+        .menu_link{
+            display: block;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #3e3e3e;
+            text-decoration: none;
+            @include prefixer(transition, all 0.25s ease-in-out, webkit moz ms);
+
+            &:hover{
+                text-decoration: none;
+                background: #f2f2f2;
+            }
+        }
+    }
+}

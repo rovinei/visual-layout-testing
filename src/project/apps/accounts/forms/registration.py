@@ -1,5 +1,5 @@
 from django import forms
-from ..models import Employee, Customer
+from ..models import  Customer
 from django.core.validators import EmailValidator
 
 

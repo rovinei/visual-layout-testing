@@ -1,0 +1,44 @@
+{% extends 'automatetest/layout/base.html' %}
+{% load staticfiles %}
+{% block page_title %} Report detail {% endblock page_title %}
+
+{% block header %}
+    {% include 'automatetest/partials/top_fixed_header.html' %}
+{% endblock header %}
+
+{% block main %}
+
+<div class="page-content uk-flex uk-flex-stretch">
+
+    <div class="left_content__wrapper uk-flex-1">
+        <div class="section">
+            <div class="uk-container">
+
+                <div class="heading">
+                    <h1 class="title no-margin">
+                        Detail Report : {{ report.title }}
+                    </h1>
+                    <span>Report created at : {{ report.created_at|date:"M d, Y" }}</span>
+                </div>
+
+                <div class="report_layout uk-margin">
+                  
+                </div>
+
+            </div>
+        </div>
+
+        <div class="padding-large-bottom"></div>
+    </div>
+
+</div>
+
+{% endblock main %}
+
+{% block script_dependencies %}
+{% endblock script_dependencies%}
+
+{% block script %}
+<script>
+</script>
+{% endblock script %}

@@ -1,4 +1,8 @@
-{% extends 'screenshot/layout/base.html' %} {% load staticfiles %} {% block page_title %} Screenshot page API {% endblock page_title %} {% block main %}
+{% extends 'screenshot/layout/base.html' %}
+{% load staticfiles %}
+{% block page_title %} Screenshot page API {% endblock page_title %}
+
+{% block main %}
 
 <div class="page-header uk-flex-inline">
 
@@ -55,7 +59,7 @@
             <div class="uk-container">
 
                 <div class="fullscreen-wrapper">
-                    <form id="screenshot_api_form" class="uk-form uk-form-stacked" action="{% url 'screenshot-app:api-request-screenshot' %}" method="POST" accept-charset="utf-8">
+                    <form id="screenshot_api_form" class="uk-form uk-form-stacked" action="{% url 'automate:api-visual-test' %}" method="POST" accept-charset="utf-8">
 
                         <div class="custom-card screenshot-form__wrapper">
 
@@ -161,7 +165,7 @@
 
                                                                 {% if browser.device %}
 
-                                                                <input id="{{ browser.readable_name }}" name="browsers" value="{{ browser.os_platform|add:'|'|add:browser.os_version|add:'|'|add:browser.browser|add:'|'|add:browser.device|add:'|'|add:browser.real_mobile }}" type="checkbox" class="browser-custom-checkbox custom-checkbox">
+                                                                <input id="{{ browser.readable_name }}" name="browsers" value="{{ browser.os_platform|add:'|'|add:browser.os_version|add:'|'|add:browser.browser|add:'|'|add:browser.device }}" type="checkbox" class="browser-custom-checkbox custom-checkbox">
                                                                 <label for="{{ browser.readable_name }}">
                                                                     {{ browser.device }}
                                                                 </label> {% else %}
@@ -202,6 +206,10 @@
     </div>
 
 </div>
+
+{% block script_dependencies %}
+<script src="{% static 'screenshot/custom/js/automate.api.js' %}" crossorigin="anonymous"></script>
+{% endblock script_dependencies%}
 
 {% endblock main %} {% block script %}
 <script>

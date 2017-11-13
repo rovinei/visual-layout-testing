@@ -1,139 +1,15 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import uuid
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.auth.models import PermissionsMixin
-from django.contrib.auth.base_user import (AbstractBaseUser, BaseUserManager)
-from django.core.exceptions import ValidationError
+from django.contrib.auth.models import User
 from django.utils.html import format_html
 from django.conf import settings
 from .utils import handle_upload_avatar
-
-class UserManager(BaseUserManager):
-
-    """
-    Custom user (Customer) manager
-    """
-    use_in_migrations = True
-
-    def _create_user(self, email, password, **extra_fields):
-        """
-        Creates and saves a User with the given email and password.
-        """
-        if not email:
-            raise ValueError('The given email must be set')
-
-        email = self.normalize_email(email)
-        user = self.model(email=email, **extra_fields)
-        user.set_password(password)
-        user.save(using=self._db)
-        return user
-
-    def create_user(self, email, password=None, **extra_fields):
-        extra_fields.setdefault(str('is_staff'), False)
-        extra_fields.setdefault(str('is_admin'), False)
-        extra_fields.setdefault(str('is_superuser'), False)
-        user = self._create_user(email, password, **extra_fields)
-        return user
-
-    def create_superuser(self, email, password, **extra_fields):
-        extra_fields.setdefault(str('is_staff'), True)
-        extra_fields.setdefault(str('is_admin'), True)
-        extra_fields.setdefault(str('is_superuser'), True)
-        if extra_fields.get(str('is_admin')) is not True:
-            raise ValueError('Superuser must have is_admin=True.')
-
-        user = self._create_user(email, password, **extra_fields)
-        return user
-
-
-class User(AbstractBaseUser, PermissionsMixin):
-
-    """
-    Customer account authentication
-    """
-    uid = models.UUIDField(editable=False, unique=True, verbose_name=_("Unique ID"), db_index=True)
-    email = models.EmailField(verbose_name=_("Email address"), max_length=255, unique=True)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
-    is_admin = models.BooleanField(default=False)
-
-    objects = UserManager()
-
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
-
-    class Meta:
-        verbose_name = _('user')
-        verbose_name_plural = _('users')
-
-    def __str__(self):
-        # __unicode__ on Python 2
-        return self.email
-
-    def __unicode__(self):
-        # __unicode__ on Python 3
-        return self.email
-
-    def get_full_name(self):
-        return self.email
-
-    def get_short_name(self):
-        return self.email
-
-    def has_perm(self, perm, obj=None):
-        if self.is_superuser:
-            return True
-        else:
-            return False
-
-    def has_module_perms(self, app_label):
-        if self.is_superuser:
-            return True
-        else:
-            return False
-
-    def get_username(self):
-        return self.email
-
-    def save(self, *args, **kwargs):
-        def generate_uid():
-            return str(uuid.uuid4()).replace('-', "")
-
-        def existed(identifier):
-            user = self.__class__.objects.filter(uid=identifier).first()
-            return user is not None
-
-        def check_existed_user():
-            uid = generate_uid()
-            if existed(uid):
-                try:
-                    check_existed_user()
-                except RuntimeError:
-                    raise ValidationError(
-                        "Unique id is existed, already retried to the maximum time, Please resubmit the form."
-                    )
-            self.uid = uid
-        check_existed_user()
-        super(User, self).save(*args, **kwargs)
-
-
-class Department(models.Model):
-    """
-    Department for employee
-    """
-    name = models.CharField(max_length=191, verbose_name=_("Department Name"), null=False, blank=False)
-    description = models.TextField(verbose_name=_("Description"), blank=True, null=True)
-    created_at = models.DateTimeField(verbose_name=_("Created Date"), auto_now=False, auto_now_add=True)
-    updated_at = models.DateTimeField(verbose_name=_("Updated Date"), auto_now_add=False, auto_now=True)
-
-    def __str__(self):
-        return self.name
-
-    def __unicode__(self):
-        return self.name
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+import logging
 
 
 class Employee(models.Model):
@@ -142,11 +18,10 @@ class Employee(models.Model):
     Employee ORM model
 
     """
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(verbose_name=_("First name"), max_length=255, blank=True, null=True)
     last_name = models.CharField(verbose_name=_("Last name"), max_length=255, blank=True, null=True)
     username = models.CharField(verbose_name=_("Username"), max_length=255, blank=True, null=True)
-    department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True)
     position = models.CharField(max_length=191, blank=True, null=True)
     address = models.CharField(max_length=255, blank=True, null=True)
     contact_number = models.CharField(verbose_name=_("Phone number"), max_length=15, blank=True, null=True)
@@ -161,7 +36,13 @@ class Employee(models.Model):
 
     def __unicode__(self):
         return self.username
-    
+
+    def __avatar_img__(self):
+        if hasattr(self.avatar, 'url'):
+            return format_html('<img height="90px" src="{}" crossorigon="annonymous" />'.format(self.avatar.url))
+        else:
+            return format_html('<img height="90px" src="no-image.jpg" crossorigon="annonymous" />')
+
 
 class Customer(models.Model):
 
@@ -169,7 +50,7 @@ class Customer(models.Model):
     Customer account detail, this one to one relationship with customer account authentication
     """
 
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(verbose_name=_("First name"), max_length=255, blank=True, null=True)
     last_name = models.CharField(verbose_name=_("Last name"), max_length=255, blank=True, null=True)
     username = models.CharField(verbose_name=_("Username"), max_length=255, blank=True, null=True)
@@ -233,4 +114,26 @@ class Customer(models.Model):
             )
 
 
+@receiver(post_save, sender=User)
+def create_customer_info(sender, **kwargs):
 
+    """
+    Create blank customer information record after received post_save signal
+    from Customer registered model
+
+    :param sender: which model was being sent
+    :param kwargs: keyword argument of model instance
+    :return: void
+    """
+
+    if isinstance(sender, Customer):
+        if 'created' in kwargs and 'instance' in kwargs:
+            user = kwargs[str('instance')]
+            if hasattr(user, 'is_staff') and user.is_staff is True:
+                employee = Employee.objects.create(user=user)
+                if employee:
+                    logging.info("Successfully created employee info record")
+            else:
+                customer = Customer.objects.create(user=user)
+            if customer:
+                logging.info("Successfully created customer info record")

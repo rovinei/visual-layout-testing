@@ -1,0 +1,49 @@
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block page_title %}{% endblock page_title %}</title>
+    <meta name="csrfmiddlewaretoken" content="{{ csrf_token }}">
+    <link href="{% static 'common/custom/font/flaticon.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <link href="{% static 'common/selectize/css/selectize.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <link href="{% static 'common/selectize/css/selectize.default.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <link href="{% static 'common/selectize/css/selectize.bootstrap3.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <link href="{% static 'common/uikit/css/uikit.min.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <!--<link href="{% static 'common/uikit/css/uikit-rtl.min.css' %}" rel="stylesheet" crossorigin="anonymous">-->
+    <link href="{% static 'common/swal/sweetalert.min.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <link href="{% static 'common/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <link href="{% static 'common/custom/css/styles.css' %}" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body>
+<div id="loading-spinner">
+    <div class="inner">
+        <span class="spinner-icon"></span>
+    </div>
+</div>
+{% block header %}
+{% endblock header %}
+
+{% block main %}
+{% endblock main %}
+
+{% block footer %}
+{% endblock footer %}
+
+<script src="{% static 'common/jquery/jquery-3.2.1.min.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'common/uikit/js/uikit.min.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'common/uikit/js/uikit-icons.min.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'common/selectize/js/standalone/selectize.min.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'common/swal/sweetalert-2.0.6.min.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'common/custom/js/main.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'automatetest/custom/js/automate.api.js' %}" crossorigin="anonymous"></script>
+{% block script_dependencies %}
+
+{% endblock script_dependencies%}
+
+{% block script %}
+
+{% endblock script %}
+</body>
+</html>
+

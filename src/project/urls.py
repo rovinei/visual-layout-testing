@@ -16,11 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from project import views
+from src.project import views
 
 urlpatterns = [
     url(r'^$', views.redirect_view, name="root-domain"),
     url(r'^admin/', admin.site.urls),
-    url(r'^clarifai/', include('project.apps.clarifaiApi.urls', namespace='clarifai-api')),
-    url(r'^screenshot/', include('project.apps.screenshot.urls', namespace="screenshot-app"), name="screenshot-app")
+    url(r'^clarifai/', include('src.project.apps.clarifaiApi.urls', namespace='clarifai-api')),
+    url(r'^screenshot/', include('src.project.apps.screenshot.urls', namespace="screenshot-app")),
+    url(r'^automate/', include('src.project.apps.automatetest.urls', namespace="automate"))
 ]

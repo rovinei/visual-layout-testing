@@ -23,7 +23,7 @@ def generate_random_string(length, **kwargs):
 
 def handle_upload_avatar(instance, filename, **kwargs):
     user_type = str(instance.__class__).lower() if instance.__class__ in kwargs else 'customer'
-    file_name = generate_random_string(32, only_lower=True) + "-" + str(filename).replace(' ', '-').lower() + ".png"
+    file_name = generate_random_string(48) + ".png"
     return "{}/{}/{}/{}/{}/{}".format(
         'users',
         user_type,

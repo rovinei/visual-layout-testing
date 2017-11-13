@@ -1,0 +1,157 @@
+{% load staticfiles %}
+<div class="fullscreen-wrapper">
+    <form id="cross_browser_form" class="uk-form uk-form-stacked" action="{% url 'automate:ajax_visual_testing' %}" method="POST" accept-charset="utf-8">
+
+        <div class="custom-card screenshot-form__wrapper">
+
+            <div class="inner">
+                <div class="heading large uk-text-center">
+                    <h1 class="heading-title uk-text-center">
+                        Automate layout testing for cross browser compatibility
+                    </h1>
+                </div>
+
+                <div class="uk-grid uk-grid-small">
+                    {% csrf_token %}
+                    <input type="hidden" name="project_uuid" value="{{ current_project.uuid }}">
+                    {% if current_build %}
+                    <input type="hidden" name="project_uuid" value="{{ current_build.uuid }}">
+                    {% endif %}
+                    <div class="uk-width-1-1 uk-form-row uk-margin">
+                        <label class="uk-form-label" for="{{ screenshot_form.page_url.auto_id }}">
+                            {{ screenshot_form.page_url.label }}
+                            <span class="label-desc">
+                                <i class="fa fa-info-circle"></i>
+                                {{ screenshot_form.page_url.help_text }}
+                            </span>
+                        </label>
+                        <div class="uk-form-controls">
+                            {{ screenshot_form.page_url }}
+                        </div>
+                    </div>
+
+                    <div class="uk-width-1-3 uk-form-row uk-margin">
+                        <label class="uk-form-label" for="{{ screenshot_form.mac_res.auto_id }}">
+                        {{ screenshot_form.mac_res.label }}
+                        <span class="label-desc">
+                            <i class="fa fa-info-circle"></i>
+                            {{ screenshot_form.mac_res.help_text }}
+                        </span>
+                    </label>
+                        <div class="uk-form-controls">
+                            {{ screenshot_form.mac_res }}
+                        </div>
+                    </div>
+
+                    <div class="uk-width-1-3 uk-form-row uk-margin">
+                        <label class="uk-form-label" for="{{ screenshot_form.win_res.auto_id }}">
+                        {{ screenshot_form.win_res.label }}
+                        <span class="label-desc">
+                            <i class="fa fa-info-circle"></i>
+                            {{ screenshot_form.win_res.help_text }}
+                        </span>
+                    </label>
+                        <div class="uk-form-controls">
+                            {{ screenshot_form.win_res }}
+                        </div>
+                    </div>
+
+                    <div class="uk-width-1-3 uk-form-row uk-margin">
+                        <label class="uk-form-label" for="{{ screenshot_form.screenshot_quality.auto_id }}">
+                            {{ screenshot_form.screenshot_quality.label }}
+                            <span class="label-desc">
+                                <i class="fa fa-info-circle"></i>
+                                {{ screenshot_form.screenshot_quality.help_text }}
+                            </span>
+                        </label>
+                        <div class="uk-form-controls">
+                            {{ screenshot_form.screenshot_quality }}
+                        </div>
+                    </div>
+
+                    <div class="uk-form-row uk-margin">
+                        <div uk-form-custom="target: true" class="uk-form-controls">
+                            <input type="file" id="spec_file" name="spec_file" class="uploadfile" required>
+                            <button class="uk-button uk-button-medium uk-button-default">
+                                <i class="fa fa-upload"></i>
+                                Upload Spec File
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section_divider__alias"></div>
+
+        <div class="custom-card">
+            <div class="inner">
+                <div class="browser_choice__wrapper">
+                    <ul class="uk-grid uk-grid-collapse os_platform_list">
+
+                        {% for os in os_browsers %}
+                        <li id="{{ os.os_name }}" class="uk-width-1-1 os_platform_item uk-flex uk-flex-between uk-flex-stretch">
+                            <div class="os_box_name uk-flex uk-flex-center">
+                                <div class="uk-panel uk-text-center">
+                                    <img src="{% static os.icon_url %}">
+                                    <span class="os_name">
+                                    {{ os.os_name }}
+                                </span>
+
+                                </div>
+                            </div>
+
+                            <div class="uk-flex-1 browser_and_device__list">
+
+                                {% for browser_type in os.browsers %}
+
+                                <div class="browser_collection uk-flex uk-flex-between uk-flex-stretch">
+
+                                    <div class="browser_name" data-browser-name="{{ browser_type.browser_name }}">
+                                        <img src="{% static browser_type.icon_url %}">
+                                    </div>
+                                    <div class="uk-flex-1 browser_versions_wrapper">
+                                        <ul class="version_list">
+                                            {% for browser in browser_type.browser_versions %}
+                                            <li class="item">
+
+                                                {% if browser.device %}
+
+                                                <input id="{{ browser.readable_name }}" name="browsers" value="{{ browser.os_platform|add:'|'|add:browser.os_version|add:'|'|add:browser.browser|add:'|'|add:browser.device|add:'|'|add:'1' }}" type="checkbox" class="browser-custom-checkbox custom-checkbox">
+                                                <label for="{{ browser.readable_name }}">
+                                                    {{ browser.device }}
+                                                </label> {% else %}
+
+                                                <input id="{{ browser.readable_name }}" name="browsers" value="{{ browser.os_platform|add:'|'|add:browser.os_version|add:'|'|add:browser.browser|add:'|'|add:browser.browser_version|add:'|'|add:'0' }}" type="checkbox" class="browser-custom-checkbox custom-checkbox">
+                                                <label for="{{ browser.readable_name }}">
+                                                    {{ browser.browser_version|floatformat }}
+                                                </label> {% endif %}
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                            </div>
+                        </li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section_divider__alias"></div>
+
+        <div class="uk-width-1-1 uk-form-row uk-margin">
+            <div class="uk-form-controls uk-text-center">
+                <button id="runCrossBrowserTest" type="submit" class="custom-button custom-button-fill custom-button-radius uk-button uk-button-medium btn-green">Run Test</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>

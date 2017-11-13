@@ -3,7 +3,8 @@ from __future__ import unicode_literals
 
 import base64
 import cStringIO
-import json, time
+import json
+import time
 from django.http import HttpResponse, JsonResponse, StreamingHttpResponse
 from django.template import loader
 from clarifai.rest import ClarifaiApp, Image as ClImage, Concept
@@ -15,6 +16,7 @@ try:
     CL_APP = ClarifaiApp(api_key='ceac8a98d7b148ec82d38b232831aba3')
 except ApiError as api_err:
     print(api_err.error_details)
+
 
 @require_http_methods(['GET'])
 def index(request):

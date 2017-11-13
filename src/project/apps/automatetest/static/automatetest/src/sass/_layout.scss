@@ -1,0 +1,89 @@
+
+/*
+	Global navigation menu
+*/
+
+.page-header{
+	background: #fff;
+    height: 50px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    @include prefixer(box-shadow, 0 1px rgba(0,0,0,.1), webkit moz ms);
+    @include clearfix();
+    z-index: 1001;
+}
+
+#sidebar_toggler{
+	button{
+		border: none;
+	}
+
+	.fa{
+		font-size: 1.3em;
+	}
+}
+
+.global_nav{
+	position: relative;
+	padding: 0 15px;
+
+	&.left{
+		flex: 0 1 auto;
+	}
+}
+
+.global_nav_ul{
+	position: relative;
+	width: auto;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+
+	li{
+		display: inline-block;
+
+		&.seperator{
+			line-height: 50px;
+			@include box(inline-axis);
+			@include justify-content(center);
+			@include align-items(center);
+
+			.fa{
+				color: #4e4e4e;
+				font-size: 0.8em;
+			}
+		}
+	}
+
+	a{
+		color: #3e3e3e;
+		padding: 8px 15px;
+		line-height: 50px;
+		text-decoration: none;
+
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}
+
+.sidebar{
+	position: relative;
+	width: 280px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	background: #fff;
+	height: 100vh;
+	overflow: scroll;
+}
+
+.left_content__wrapper{
+	position: relative;
+	@include clearfix();
+	height: 100vh;
+	overflow-y: auto;
+}
+
