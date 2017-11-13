@@ -162,6 +162,6 @@ typings/
 
 .DS_Store
 
-.idea/*
+.idea/workspace.xml
 
-reports/*
+src/project/reports/
