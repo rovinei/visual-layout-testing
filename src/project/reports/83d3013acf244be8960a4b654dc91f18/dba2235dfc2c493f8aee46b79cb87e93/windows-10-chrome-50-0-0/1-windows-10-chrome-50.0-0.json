@@ -1,0 +1,41 @@
+{
+  "testId" : "1-windows-10-chrome-50.0-0",
+  "name" : "Windows 10 chrome 50.0 0",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Windows 10 chrome 50.0 0",
+      "status" : "info",
+      "time" : 1510536091630,
+      "includedTags" : [ ],
+      "excludedTags" : [ ],
+      "sections" : [ {
+        "name" : "",
+        "objects" : [ {
+          "name" : "==Test Layout==",
+          "specs" : [ ]
+        }, {
+          "name" : "top",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "/Users/rana/Desktop/visual-layout-testing/src/tmp/tmp6iMbnw/testing_specfile.spec",
+              "lineNumber" : 8
+            },
+            "name" : "near: down down 75 px top , -630 px left",
+            "highlight" : [ "top", "down" ]
+          } ]
+        } ]
+      } ],
+      "objects" : {
+        "top" : {
+          "area" : [ 707, 395, 276, 165 ]
+        },
+        "down" : {
+          "area" : [ 353, 635, 630, 460 ]
+        }
+      },
+      "screenshot" : "layout-1-screenshot.png",
+      "type" : "layout"
+    } ]
+  }
+}
